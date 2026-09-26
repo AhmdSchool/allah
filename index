@@ -1,1 +1,124 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📖 بيت القرآن - الرئيسية</title>
+<meta name="description" content="منصة تعليمية تفاعلية لحفظ القرآن الكريم">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="bismillah">﷽</div>
+  <div class="logo-header">
+    <svg class="logo-svg" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(120, 32)"><circle cx="0" cy="0" r="11" fill="#1e5fa8"/><circle cx="5" cy="-3" r="9" fill="#ffffff"/><circle cx="0" cy="-15" r="3" fill="#e0a938"/></g>
+      <path d="M120 40 Q82 72 76 118 L164 118 Q158 72 120 40 Z" fill="none" stroke="#1e5fa8" stroke-width="6"/>
+      <path d="M70 118 L170 118" stroke="#1e5fa8" stroke-width="6" stroke-linecap="round"/>
+      <path d="M35 175 Q120 145 120 168 L120 195 Q120 172 205 175 L205 200 Q120 177 120 200 Q120 177 35 200 Z" fill="#1e5fa8"/>
+      <path d="M52 178 Q120 152 120 172" stroke="#f0d68a" stroke-width="2" fill="none"/>
+      <path d="M120 172 Q120 152 188 178" stroke="#f0d68a" stroke-width="2" fill="none"/>
+      <text x="120" y="232" text-anchor="middle" font-family="Amiri, serif" font-size="26" font-weight="bold" fill="#1e5fa8">بيت القرآن</text>
+    </svg>
+  </div>
+  <h1>📖 بيت القرآن</h1>
+  <p>القرآن الكريم كاملًا</p>
+</header>
+
+<div class="tabs-container">
+  <div class="tabs" id="tabsContainer"></div>
+</div>
+
+<div class="container">
+  <div class="section active">
+    <h2 class="section-title"><span class="emoji">🏠</span> <span>مرحبًا بك في بيت القرآن</span></h2>
+    <div class="kid-friendly"><span>💚</span><span>منصة تعليمية متكاملة لحفظ القرآن الكريم بطريقة ممتعة</span></div>
+    
+    <div class="home-grid">
+      <a href="surahs.html" class="home-card">
+        <div class="home-icon">📖</div>
+        <div class="home-title">قراءة السور</div>
+        <div class="home-desc">اقرأ واستمع لجميع سور القرآن الكريم بصوت الشيخ الحصري</div>
+      </a>
+      
+      <a href="quiz.html" class="home-card">
+        <div class="home-icon">🎯</div>
+        <div class="home-title">الاختبارات</div>
+        <div class="home-desc">اختبر معرفتك بثلاثة مستويات ممتعة</div>
+      </a>
+      
+      <a href="plans.html" class="home-card">
+        <div class="home-icon">📋</div>
+        <div class="home-title">خطط الحفظ</div>
+        <div class="home-desc">اختر خطة تناسب قدرتك ووقتك</div>
+      </a>
+      
+      <a href="order.html" class="home-card">
+        <div class="home-icon">🔤</div>
+        <div class="home-title">ترتيب الآيات</div>
+        <div class="home-desc">لعبة تفاعلية لترتيب كلمات الآية</div>
+      </a>
+      
+      <a href="progress.html" class="home-card">
+        <div class="home-icon">📊</div>
+        <div class="home-title">تتبع الحفظ</div>
+        <div class="home-desc">تابع تقدمك واحصل على تقارير مفصلة</div>
+      </a>
+      
+      <a href="encyclopedia.html" class="home-card">
+        <div class="home-icon">📚</div>
+        <div class="home-title">موسوعة الحفاظ</div>
+        <div class="home-desc">معلومات شاملة عن كل سورة من ويكيبيديا</div>
+      </a>
+      
+      <a href="maps.html" class="home-card">
+        <div class="home-icon">🗺️</div>
+        <div class="home-title">خرائط القرآن</div>
+        <div class="home-desc">خرائط ذهنية مبسطة لكل سورة</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-card">
+    <div class="footer-title">📖 بيت القرآن</div>
+    <div style="margin-top:6px;">© جميع الحقوق محفوظة — AhmdSchool</div>
+    <div style="margin-top:8px;">للتواصل: <a href="mailto:byt@muslim.com">byt@muslim.com</a></div>
+  </div>
+</footer>
+
+<div class="floating-buttons">
+  <button class="fab fab-user" onclick="openRegisterModal()">👤<span class="fab-label">تسجيل</span></button>
+  <button class="fab fab-theme" onclick="toggleTheme()">🌙<span class="fab-label">المظهر</span></button>
+  <a href="https://wa.me/201080060990" target="_blank" class="fab fab-whatsapp">💬<span class="fab-label">تواصل</span></a>
+</div>
+
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <h3>👤 تسجيل بيانات الحافظ</h3>
+    <div class="avatar-preview" id="modalAvatar">👤</div>
+    <label>الاسم</label>
+    <input type="text" id="regName" placeholder="اكتب اسمك">
+    <label>الصورة (اختياري)</label>
+    <input type="file" id="regPhoto" accept="image/*">
+    <div class="action-buttons">
+      <button class="btn btn-gold" onclick="saveUserData()">💾 حفظ</button>
+      <button class="btn btn-secondary" onclick="closeRegisterModal()">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/common.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    initCommon('home');
+  });
+</script>
+</body>
+</html>
