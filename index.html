@@ -1,0 +1,2710 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0a0e1a">
+<meta name="description" content="الرحمن — رحلة في جلال الله وأسمائه وصفاته وأفعاله">
+<title>الرحمن | رحلة في جلال الله</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & FOUNDATIONS
+   ============================================ */
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; }
+
+:root {
+    --bg-1: #0a0e1a;
+    --bg-2: #131829;
+    --bg-3: #1a1f3a;
+    --gold: #d4af37;
+    --gold-light: #ffd700;
+    --gold-pale: #fff2b0;
+    --emerald: #10b981;
+    --teal: #14b8a6;
+    --purple: #7c3aed;
+    --pink: #ec4899;
+    --sky: #38bdf8;
+    --text: #f0f3fa;
+    --text-dim: #a0a8c0;
+    --card: rgba(20,25,45,0.65);
+    --card-solid: rgba(25,30,50,0.9);
+    --border: rgba(212,175,55,0.25);
+    --glass: rgba(20,25,45,0.5);
+    --shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+    --glow: 0 0 40px rgba(212,175,55,0.35);
+    --font-quran: 'Amiri', serif;
+    --font-ui: 'Cairo', sans-serif;
+    --font-kufi: 'Reem Kufi', sans-serif;
+}
+
+body[data-theme="night"] { --bg-1:#0a0e1a; --bg-2:#131829; --bg-3:#1a1f3a; --gold:#d4af37; --text:#f0f3fa; --text-dim:#a0a8c0; --border:rgba(212,175,55,0.25); }
+body[data-theme="dawn"] { --bg-1:#2d1b3d; --bg-2:#4a2545; --bg-3:#7c2d4e; --gold:#ffd166; --text:#fff5e1; --text-dim:#e0c9b0; --border:rgba(255,209,102,0.3); }
+body[data-theme="emerald"] { --bg-1:#022c22; --bg-2:#064e3b; --bg-3:#0f766e; --gold:#fcd34d; --text:#e8fff5; --text-dim:#a7d9c0; --border:rgba(252,211,77,0.3); }
+body[data-theme="royal"] { --bg-1:#1a0b2e; --bg-2:#2d1b4e; --bg-3:#4c1d95; --gold:#fbbf24; --text:#f3e8ff; --text-dim:#c4b5fd; --border:rgba(251,191,36,0.3); }
+body[data-theme="ocean"] { --bg-1:#041e2e; --bg-2:#0c4a6e; --bg-3:#0891b2; --gold:#fcd34d; --text:#e0f7ff; --text-dim:#a5d8e8; --border:rgba(252,211,77,0.3); }
+body[data-theme="rose"] { --bg-1:#2d0a1e; --bg-2:#5c1a3a; --bg-3:#be185d; --gold:#fde047; --text:#ffe4ec; --text-dim:#f9a8d4; --border:rgba(253,224,71,0.3); }
+
+body {
+    font-family: var(--font-ui);
+    background: linear-gradient(145deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text);
+    overflow-x: hidden;
+    transition: background 0.8s, color 0.4s;
+    line-height: 1.7;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 30% 60%, rgba(212,175,55,0.8), transparent),
+        radial-gradient(2px 2px at 70% 30%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 90% 70%, rgba(212,175,55,0.6), transparent),
+        radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 80% 90%, rgba(212,175,55,0.5), transparent);
+    background-size: 200% 200%;
+    animation: starsTwinkle 12s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+}
+@keyframes starsTwinkle {
+    0%, 100% { opacity: 0.6; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-3px); }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(212,175,55,0.08), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(124,58,237,0.08), transparent 45%);
+    animation: ambientRotate 60s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+@keyframes ambientRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   LOADING
+   ============================================ */
+.loader {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(145deg, #0a0e1a, #131829);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.8s, visibility 0.8s;
+}
+.loader.hidden { opacity: 0; visibility: hidden; }
+.loader-bismillah {
+    font-family: var(--font-quran);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--gold);
+    text-shadow: 0 0 40px rgba(212,175,55,0.6);
+    animation: bismillahPulse 2s ease-in-out infinite;
+    margin-bottom: 30px;
+}
+@keyframes bismillahPulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.85; }
+}
+.loader-ornament { display: flex; gap: 8px; margin-bottom: 20px; }
+.loader-ornament span {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: dotBounce 1.4s ease-in-out infinite;
+}
+.loader-ornament span:nth-child(2) { animation-delay: 0.2s; }
+.loader-ornament span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dotBounce {
+    0%,80%,100% { transform: translateY(0); opacity: 0.4; }
+    40% { transform: translateY(-15px); opacity: 1; }
+}
+.loader-text {
+    font-family: var(--font-quran);
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.main-header {
+    position: relative;
+    z-index: 10;
+    padding: 30px 20px 20px;
+    text-align: center;
+}
+.header-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.ornament-line {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.ornament-star {
+    color: var(--gold);
+    font-size: 1.4rem;
+    animation: starSpin 8s linear infinite;
+}
+@keyframes starSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.header-title {
+    font-family: var(--font-quran);
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    background: linear-gradient(180deg, #ffd700, #d4af37 40%, #b8860b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 30px rgba(212,175,55,0.5));
+    margin-bottom: 6px;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+.header-subtitle {
+    font-family: var(--font-quran);
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    color: var(--text-dim);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+.header-verse {
+    font-family: var(--font-quran);
+    font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+    color: var(--gold);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.header-verse::before,
+.header-verse::after {
+    content: '❁';
+    color: var(--gold);
+    opacity: 0.7;
+    margin: 0 8px;
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+.nav-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,14,26,0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 15px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.nav-tabs::-webkit-scrollbar { display: none; }
+.tabs-inner {
+    display: flex;
+    gap: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-width: max-content;
+    justify-content: center;
+}
+.tab-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1.5px solid transparent;
+    background: rgba(212,175,55,0.08);
+    color: var(--text-dim);
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.tab-btn:hover {
+    color: var(--text);
+    background: rgba(212,175,55,0.15);
+    transform: translateY(-2px);
+}
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #0a0e1a;
+    border-color: transparent;
+    box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+    font-weight: 700;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 100px;
+    position: relative;
+    z-index: 5;
+}
+.panel { display: none; animation: panelFade 0.6s ease; }
+.panel.active { display: block; }
+@keyframes panelFade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+    font-family: var(--font-quran);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--gold);
+    position: relative;
+    padding-bottom: 15px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    border-radius: 2px;
+}
+.section-subtitle {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================
+   HOME / HERO
+   ============================================ */
+.hero-section {
+    text-align: center;
+    padding: 40px 20px 60px;
+    position: relative;
+}
+.live-clock {
+    display: inline-block;
+    padding: 16px 32px;
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid var(--border);
+    border-radius: 22px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    transition: all 0.4s;
+}
+.live-clock:hover {
+    border-color: var(--gold);
+    box-shadow: var(--glow);
+}
+.live-clock .time {
+    font-family: var(--font-quran);
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+.live-clock .date {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 6px;
+    letter-spacing: 1px;
+}
+.live-clock .prayer {
+    font-size: 0.9rem;
+    color: var(--gold-pale);
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.hero-quote {
+    font-family: var(--font-quran);
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    color: var(--text);
+    max-width: 800px;
+    margin: 0 auto 15px;
+    line-height: 2;
+    position: relative;
+    padding: 0 30px;
+}
+.hero-quote::before,
+.hero-quote::after {
+    content: '﴿';
+    position: absolute;
+    color: var(--gold);
+    font-size: 2.5em;
+    opacity: 0.6;
+}
+.hero-quote::before { top: -10px; right: 0; }
+.hero-quote::after { content: '﴾'; bottom: -40px; left: 0; }
+.hero-quote-ref {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+}
+.quick-card {
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid var(--border);
+    border-radius: 22px;
+    padding: 26px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+.quick-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212,175,55,0.05), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.quick-card:hover::before { opacity: 1; }
+.quick-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(212,175,55,0.2);
+}
+.quick-icon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(212,175,55,0.4));
+}
+.quick-title {
+    font-family: var(--font-quran);
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+.quick-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+/* ============================================
+   NAMES / SIFAT / AF'AL GRID
+   ============================================ */
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    position: relative;
+}
+.search-bar input {
+    width: 100%;
+    padding: 16px 50px 16px 20px;
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+.search-bar input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(212,175,55,0.3);
+}
+.search-bar::before {
+    content: '🔍';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+.names-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+}
+.name-card {
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    border: 1.5px solid var(--border);
+    border-radius: 18px;
+    padding: 22px 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.name-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(212,175,55,0.15), transparent 30%);
+    animation: cardShine 6s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.name-card:hover::before { opacity: 1; }
+@keyframes cardShine {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.name-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(212,175,55,0.3);
+}
+.name-number {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.name-arabic {
+    font-family: var(--font-quran);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+    text-shadow: 0 0 20px rgba(212,175,55,0.4);
+    position: relative;
+    z-index: 1;
+}
+.name-meaning {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+
+/* Sifat & Af'al cards */
+.sifat-card {
+    min-height: 180px;
+    padding: 26px 18px;
+}
+.sifat-card .name-arabic {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+.sifat-card .name-meaning {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+.sifat-card .card-verse-hint {
+    font-family: var(--font-quran);
+    font-size: 0.75rem;
+    color: var(--gold);
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+    border-top: 1px dashed var(--border);
+    padding-top: 8px;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+.sifat-card .card-tag {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    padding: 3px 10px;
+    background: rgba(212,175,55,0.15);
+    border-radius: 10px;
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Add-new card */
+.add-new-card {
+    border: 2px dashed var(--gold) !important;
+    background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.02)) !important;
+    opacity: 0.85;
+}
+.add-new-card:hover {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05)) !important;
+}
+.add-new-card .name-arabic {
+    font-size: 2.8rem;
+    animation: addPulse 2s ease-in-out infinite;
+}
+@keyframes addPulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+.add-new-card .name-meaning {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Custom cards (user-added) */
+.custom-card {
+    position: relative;
+}
+.custom-card .delete-custom {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255,94,107,0.2);
+    color: #ff5e6b;
+    border: 1.5px solid #ff5e6b;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: all 0.3s;
+    z-index: 3;
+}
+.custom-card:hover .delete-custom {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+.custom-card .custom-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s;
+}
+.modal-overlay.show { display: flex; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.modal-content {
+    background: linear-gradient(145deg, var(--card-solid), rgba(25,30,50,0.98));
+    border: 2px solid var(--gold);
+    border-radius: 28px;
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    text-align: center;
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(212,175,55,0.2);
+}
+@keyframes modalPop {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.modal-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,94,107,0.2);
+    color: #ff5e6b;
+    border: 1.5px solid #ff5e6b;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.modal-close:hover {
+    background: #ff5e6b;
+    color: white;
+    transform: rotate(90deg);
+}
+.modal-name-num {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+.modal-name-arabic {
+    font-family: var(--font-quran);
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-weight: 700;
+    background: linear-gradient(180deg, #ffd700, #d4af37, #b8860b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 30px rgba(212,175,55,0.6));
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.modal-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 20px 0;
+}
+.modal-meaning {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 15px;
+    text-align: right;
+}
+.modal-verse {
+    font-family: var(--font-quran);
+    font-size: 1.15rem;
+    color: var(--gold-pale);
+    padding: 16px 20px;
+    background: rgba(212,175,55,0.08);
+    border-radius: 16px;
+    border-right: 3px solid var(--gold);
+    line-height: 2;
+    text-align: right;
+    margin-top: 15px;
+}
+.modal-verse-ref {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 8px;
+    text-align: left;
+}
+
+/* ============================================
+   CELESTIAL INFOGRAPHIC (Prayer tab)
+   ============================================ */
+.celestial-stage {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 1.6;
+    margin: 0 auto 30px;
+    background: linear-gradient(180deg,
+        #0a0e1a 0%,
+        #131829 35%,
+        #1a1f3a 55%,
+        #4a2545 80%,
+        #7c2d4e 100%);
+    border-radius: 28px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6), inset 0 0 100px rgba(0,0,0,0.4);
+}
+.celestial-stage::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 15% 20%, white, transparent),
+        radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 65% 25%, white, transparent),
+        radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 25% 35%, white, transparent),
+        radial-gradient(1px 1px at 75% 40%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 55% 30%, white, transparent);
+    animation: starsTwinkle 6s ease-in-out infinite;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+/* Horizon */
+.celestial-horizon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 38%;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(212,175,55,0.05) 20%,
+        rgba(212,175,55,0.12) 100%);
+    border-top: 2px solid rgba(212,175,55,0.4);
+}
+.celestial-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8%;
+    background: linear-gradient(180deg,
+        rgba(76,29,149,0.5) 0%,
+        rgba(45,10,30,0.85) 100%);
+    border-top: 1.5px solid rgba(212,175,55,0.5);
+}
+
+/* Sun */
+.sun-orb {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #fff9c4, #ffd700 40%, #ff8c00 80%, #ff6b00);
+    box-shadow: 0 0 40px rgba(255,200,0,0.9), 0 0 80px rgba(255,140,0,0.5), inset -3px -3px 12px rgba(139,69,19,0.4);
+    transition: transform 0.6s, left 0.6s, top 0.6s, opacity 0.6s;
+    z-index: 5;
+    animation: sunPulse 3s ease-in-out infinite;
+}
+@keyframes sunPulse {
+    0%,100% { box-shadow: 0 0 40px rgba(255,200,0,0.9), 0 0 80px rgba(255,140,0,0.5), inset -3px -3px 12px rgba(139,69,19,0.4); }
+    50% { box-shadow: 0 0 55px rgba(255,200,0,1), 0 0 110px rgba(255,140,0,0.7), inset -3px -3px 12px rgba(139,69,19,0.4); }
+}
+
+/* Moon */
+.moon-orb {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 60% 35%, #f8f8f8, #e8e8f0 40%, #b8b8d0 90%);
+    box-shadow: 0 0 25px rgba(255,255,255,0.6), 0 0 50px rgba(200,200,255,0.35), inset 4px 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.6s, left 0.6s, top 0.6s, opacity 0.6s;
+    z-index: 5;
+    overflow: hidden;
+}
+.moon-orb::before {
+    content: '';
+    position: absolute;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.08);
+    top: 20%; left: 25%;
+    box-shadow: 12px 8px 0 -2px rgba(0,0,0,0.06), -6px 18px 0 -1px rgba(0,0,0,0.05);
+}
+
+/* Star/constellation */
+.constellation {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+.constellation .c-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px white;
+    animation: starShine 2s ease-in-out infinite;
+}
+@keyframes starShine {
+    0%,100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.4); }
+}
+
+/* Info overlay labels */
+.celestial-info {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: rgba(10,14,26,0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px 14px;
+    z-index: 6;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--text);
+    min-width: 180px;
+}
+.celestial-info .ci-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 3px 0;
+}
+.celestial-info .ci-row span:first-child { color: var(--text-dim); }
+.celestial-info .ci-row span:last-child {
+    color: var(--gold);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.celestial-status {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 22px;
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid var(--gold);
+    border-radius: 30px;
+    font-family: var(--font-quran);
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-weight: 700;
+    z-index: 6;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    box-shadow: 0 8px 25px rgba(212,175,55,0.3);
+}
+
+/* Day/Night info cards */
+.day-night-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.dn-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 20px 18px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.dn-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(212,175,55,0.2);
+}
+.dn-card .dn-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.dn-card .dn-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 15px rgba(212,175,55,0.5));
+}
+.dn-card .dn-title {
+    font-family: var(--font-quran);
+    font-size: 1.15rem;
+    color: var(--gold);
+    font-weight: 700;
+}
+.dn-card .dn-duration {
+    font-family: var(--font-quran);
+    font-size: 1.8rem;
+    color: var(--text);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+}
+.dn-card .dn-range {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+}
+.dn-card .dn-progress {
+    height: 6px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+.dn-card .dn-progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.8s;
+}
+.dn-day .dn-progress-fill { background: linear-gradient(90deg, #ffd700, #ff8c00); }
+.dn-night .dn-progress-fill { background: linear-gradient(90deg, #4c1d95, #1e3a8a); }
+
+/* Prayer Times cards */
+.prayer-times {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 30px;
+}
+.prayer-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 18px;
+    padding: 18px 12px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.prayer-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.15);
+}
+.prayer-card.active {
+    background: linear-gradient(145deg, rgba(212,175,55,0.2), rgba(212,175,55,0.05));
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(212,175,55,0.3);
+    transform: translateY(-3px);
+}
+.prayer-icon { font-size: 1.8rem; margin-bottom: 6px; }
+.prayer-name {
+    font-family: var(--font-quran);
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.prayer-time {
+    font-size: 1rem;
+    color: var(--text-dim);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   VERSES / ADHKAR
+   ============================================ */
+.verses-container {
+    display: grid;
+    gap: 18px;
+}
+.verse-card {
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    border: 1.5px solid var(--border);
+    border-radius: 22px;
+    padding: 26px 24px;
+    position: relative;
+    transition: all 0.4s;
+}
+.verse-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(212,175,55,0.15);
+    transform: translateY(-3px);
+}
+.verse-card::before {
+    content: '❁';
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    color: var(--gold);
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+.verse-card .v-text {
+    font-family: var(--font-quran);
+    font-size: clamp(1.15rem, 3vw, 1.4rem);
+    line-height: 2.3;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+.verse-card .v-ref {
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-align: left;
+    font-weight: 600;
+}
+.verse-card .v-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    background: rgba(212,175,55,0.15);
+    border-radius: 10px;
+    font-size: 0.72rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* ============================================
+   STATS
+   ============================================ */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 22px 16px;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.stat-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(212,175,55,0.2);
+}
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+    filter: drop-shadow(0 0 12px rgba(212,175,55,0.4));
+}
+.stat-value {
+    font-family: var(--font-quran);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 4px;
+}
+.stat-label {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+}
+
+.achievements-list {
+    display: grid;
+    gap: 12px;
+}
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 18px;
+    transition: all 0.3s;
+    opacity: 0.5;
+}
+.achievement.unlocked {
+    opacity: 1;
+    border-color: var(--gold);
+    background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.03));
+    box-shadow: 0 8px 25px rgba(212,175,55,0.15);
+}
+.achievement-badge {
+    font-size: 2rem;
+    filter: grayscale(1) opacity(0.5);
+    flex-shrink: 0;
+}
+.achievement.unlocked .achievement-badge {
+    filter: none;
+    animation: badgeGlow 2s ease-in-out infinite;
+}
+@keyframes badgeGlow {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+.achievement-info { flex: 1; }
+.achievement-title {
+    font-family: var(--font-quran);
+    font-size: 1.05rem;
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+.achievement.unlocked .achievement-title { color: var(--gold); }
+.achievement-desc {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+/* ============================================
+   FORM
+   ============================================ */
+.form-group {
+    margin-bottom: 18px;
+    text-align: right;
+}
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(0,0,0,0.3);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s;
+    resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 25px rgba(212,175,55,0.25);
+    background: rgba(0,0,0,0.4);
+}
+.form-group textarea {
+    min-height: 100px;
+    line-height: 1.7;
+    font-family: var(--font-quran);
+    font-size: 1rem;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+    padding: 13px 26px;
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.2);
+}
+.btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #0a0e1a;
+    border-color: transparent;
+}
+.btn-primary:hover {
+    box-shadow: 0 15px 35px rgba(212,175,55,0.4);
+}
+.btn-danger {
+    background: rgba(255,94,107,0.15);
+    color: #ff5e6b;
+    border-color: rgba(255,94,107,0.4);
+}
+.btn-danger:hover {
+    background: rgba(255,94,107,0.25);
+}
+
+/* ============================================
+   FLOATING BUTTONS
+   ============================================ */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 500;
+    align-items: flex-start;
+}
+.fab {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--card-solid);
+    backdrop-filter: blur(15px);
+    color: var(--gold);
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    position: relative;
+    text-decoration: none;
+}
+.fab:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(212,175,55,0.4);
+}
+
+.theme-menu {
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+    background: var(--card-solid);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid var(--border);
+    border-radius: 22px;
+    padding: 12px;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    min-width: 240px;
+}
+.theme-menu.show {
+    display: grid;
+    animation: themeMenuIn 0.3s;
+}
+@keyframes themeMenuIn {
+    from { opacity: 0; transform: translateX(-15px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.theme-option {
+    aspect-ratio: 1;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.theme-option:hover { transform: scale(1.08); border-color: var(--gold); }
+.theme-option.active {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.4);
+}
+.theme-option.active::after {
+    content: '✓';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+.theme-option[data-theme="night"] { background: linear-gradient(135deg, #0a0e1a, #1a1f3a); }
+.theme-option[data-theme="dawn"] { background: linear-gradient(135deg, #2d1b3d, #7c2d4e); }
+.theme-option[data-theme="emerald"] { background: linear-gradient(135deg, #022c22, #0f766e); }
+.theme-option[data-theme="royal"] { background: linear-gradient(135deg, #1a0b2e, #4c1d95); }
+.theme-option[data-theme="ocean"] { background: linear-gradient(135deg, #041e2e, #0891b2); }
+.theme-option[data-theme="rose"] { background: linear-gradient(135deg, #2d0a1e, #be185d); }
+
+/* ============================================
+   TOAST
+   ============================================ */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #0a0e1a;
+    padding: 14px 28px;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 15px 40px rgba(212,175,55,0.5);
+    z-index: 3000;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 0.95rem;
+    pointer-events: none;
+    max-width: 90vw;
+    text-align: center;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.main-footer {
+    text-align: center;
+    padding: 50px 20px 30px;
+    border-top: 1px solid var(--border);
+    position: relative;
+    z-index: 5;
+    margin-top: 60px;
+}
+.footer-verse {
+    font-family: var(--font-quran);
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: var(--gold);
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 2;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.footer-verse::before,
+.footer-verse::after {
+    content: '❁';
+    color: var(--gold);
+    opacity: 0.7;
+    margin: 0 10px;
+    display: inline-block;
+}
+.footer-credit {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 2;
+}
+.footer-credit .gold {
+    color: var(--gold);
+    font-weight: 700;
+}
+.footer-credit a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s;
+    border-bottom: 1px dashed var(--gold);
+    padding-bottom: 1px;
+}
+.footer-credit a:hover {
+    color: var(--gold-light);
+    text-shadow: 0 0 15px rgba(212,175,55,0.6);
+    border-bottom-style: solid;
+}
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
+    border: 1.5px solid var(--gold);
+    border-radius: 30px;
+    margin-bottom: 16px;
+    font-family: var(--font-quran);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--gold);
+    box-shadow: 0 8px 25px rgba(212,175,55,0.2);
+}
+.footer-brand .brand-icon {
+    font-size: 1.3rem;
+    filter: drop-shadow(0 0 10px rgba(212,175,55,0.6));
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 640px) {
+    .main-container { padding: 0 14px 100px; }
+    .tab-btn { padding: 9px 15px; font-size: 0.78rem; }
+    .names-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+    .name-card { min-height: 130px; padding: 18px 10px; }
+    .name-arabic { font-size: 1.6rem; }
+    .sifat-card { min-height: 160px; }
+    .modal-content { padding: 30px 20px; }
+    .day-night-grid { grid-template-columns: 1fr; gap: 12px; }
+    .celestial-stage { aspect-ratio: 1.1; }
+    .sun-orb { width: 44px; height: 44px; }
+    .moon-orb { width: 36px; height: 36px; }
+    .celestial-info { min-width: 150px; padding: 8px 12px; font-size: 0.7rem; }
+    .celestial-status { font-size: 0.82rem; padding: 6px 16px; }
+}
+
+@media (max-width: 400px) {
+    .header-title { font-size: 3.5rem; }
+    .quick-actions { grid-template-columns: 1fr; }
+    .theme-menu { min-width: 200px; left: 65px; }
+}
+
+@media print {
+    .nav-tabs, .floating-buttons, .toast, .celestial-stage { display: none !important; }
+    body { background: white; color: black; }
+}
+</style>
+</head>
+<body data-theme="night">
+
+<!-- ===== LOADING ===== -->
+<div class="loader" id="loader">
+    <div class="loader-bismillah">﷽</div>
+    <div class="loader-ornament">
+        <span></span><span></span><span></span>
+    </div>
+    <div class="loader-text">﴿ رَبَّنَا لَكَ الْحَمْدُ ﴾</div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="main-header">
+    <div class="header-ornament">
+        <span class="ornament-line"></span>
+        <span class="ornament-star">✦</span>
+        <span class="ornament-line"></span>
+    </div>
+    <h1 class="header-title">الرحمن</h1>
+    <p class="header-subtitle">رحلة في جلال الله — أسماؤه وصفاته وأفعاله</p>
+    <div class="header-verse">
+        ﴿ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ﴾
+    </div>
+</header>
+
+<!-- ===== NAV ===== -->
+<nav class="nav-tabs">
+    <div class="tabs-inner" id="tabsInner">
+        <button class="tab-btn active" data-panel="home">🏠 الرئيسية</button>
+        <button class="tab-btn" data-panel="names">✨ الأسماء</button>
+        <button class="tab-btn" data-panel="sifat">🌟 الصفات</button>
+        <button class="tab-btn" data-panel="afal">⚡ الأفعال</button>
+        <button class="tab-btn" data-panel="prayers">🕌 الصلاة</button>
+        <button class="tab-btn" data-panel="stats">📊 إنجازاتي</button>
+        <button class="tab-btn" data-panel="about">ℹ️ حول</button>
+    </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main class="main-container">
+
+    <!-- HOME -->
+    <section class="panel active" id="panel-home">
+        <div class="hero-section">
+            <div class="live-clock" id="liveClock">
+                <div class="time" id="clockTime">--:--</div>
+                <div class="date" id="clockDate">—</div>
+                <div class="prayer" id="nextPrayer">🕌 —</div>
+            </div>
+
+            <p class="hero-quote" id="randomVerse">
+                وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ
+            </p>
+            <p class="hero-quote-ref" id="randomVerseRef">سورة البقرة — الآية ١٨٦</p>
+
+            <div class="quick-actions">
+                <div class="quick-card" onclick="switchToPanel('names')">
+                    <span class="quick-icon">✨</span>
+                    <div class="quick-title">أسماء الله</div>
+                    <div class="quick-desc">٩٩ اسمًا من أسماء الله الحسنى</div>
+                </div>
+                <div class="quick-card" onclick="switchToPanel('sifat')">
+                    <span class="quick-icon">🌟</span>
+                    <div class="quick-title">صفات الله</div>
+                    <div class="quick-desc">الحياة، القيومية، الأحدية، الصمدية...</div>
+                </div>
+                <div class="quick-card" onclick="switchToPanel('afal')">
+                    <span class="quick-icon">⚡</span>
+                    <div class="quick-title">أفعال الله</div>
+                    <div class="quick-desc">الخلق، الرزق، الهداية، المغفرة...</div>
+                </div>
+                <div class="quick-card" onclick="switchToPanel('prayers')">
+                    <span class="quick-icon">🕌</span>
+                    <div class="quick-title">الصلاة والفلك</div>
+                    <div class="quick-desc">مواقيت الصلاة وإنفوجرافيك فلكي حيّ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAMES -->
+    <section class="panel" id="panel-names">
+        <h2 class="section-title">أسماء الله الحسنى</h2>
+        <p class="section-subtitle">تعرّف على تسعة وتسعين اسمًا من أسماء الله الحسنى، مع معانيها وآية لكل اسم</p>
+        <div class="search-bar">
+            <input type="text" id="namesSearch" placeholder="ابحث عن اسم أو معنى...">
+        </div>
+        <div class="names-grid" id="namesGrid"></div>
+    </section>
+
+    <!-- SIFAT -->
+    <section class="panel" id="panel-sifat">
+        <h2 class="section-title">صفات الله تعالى</h2>
+        <p class="section-subtitle">صفات كمال الله عزّ وجل كما وردت في القرآن الكريم — اضغط أي بطاقة لتفاصيلها، وأضف صفاتك الخاصة</p>
+        <div class="search-bar">
+            <input type="text" id="sifatSearch" placeholder="ابحث في الصفات...">
+        </div>
+        <div class="names-grid" id="sifatGrid"></div>
+    </section>
+
+    <!-- AFAL -->
+    <section class="panel" id="panel-afal">
+        <h2 class="section-title">أفعال الله تعالى</h2>
+        <p class="section-subtitle">أفعال الله سبحانه كما وردت في القرآن — من الخلق والرزق والهداية والمغفرة وغيرها. أضف أفعالًا من عندك</p>
+        <div class="search-bar">
+            <input type="text" id="afalSearch" placeholder="ابحث في الأفعال...">
+        </div>
+        <div class="names-grid" id="afalGrid"></div>
+    </section>
+
+    <!-- PRAYERS (with celestial infographic) -->
+    <section class="panel" id="panel-prayers">
+        <h2 class="section-title">مواقيت الصلاة</h2>
+        <p class="section-subtitle">إنفوجرافيك فلكي حيّ يوضّح موقع الشمس والقمر، وطول الليل والنهار، والمواقيت التقديرية بناءً على موقعك الزمني</p>
+
+        <!-- Celestial Stage -->
+        <div class="celestial-stage" id="celestialStage">
+            <div class="celestial-horizon"></div>
+            <div class="celestial-ground"></div>
+            <div class="constellation" id="constellation"></div>
+
+            <div class="sun-orb" id="sunOrb"></div>
+            <div class="moon-orb" id="moonOrb"></div>
+
+            <div class="celestial-info">
+                <div class="ci-row"><span>⏰ الوقت</span><span id="ciTime">--:--</span></div>
+                <div class="ci-row"><span>☀️ الشروق</span><span id="ciSunrise">--:--</span></div>
+                <div class="ci-row"><span>🌇 الغروب</span><span id="ciSunset">--:--</span></div>
+                <div class="ci-row"><span>🌙 شروق القمر</span><span id="ciMoonrise">--:--</span></div>
+                <div class="ci-row"><span>🌘 غروب القمر</span><span id="ciMoonset">--:--</span></div>
+            </div>
+
+            <div class="celestial-status" id="celestialStatus">جاري الحساب...</div>
+        </div>
+
+        <!-- Day / Night info -->
+        <div class="day-night-grid">
+            <div class="dn-card dn-day">
+                <div class="dn-head">
+                    <span class="dn-icon">☀️</span>
+                    <span class="dn-title">النهار</span>
+                </div>
+                <div class="dn-duration" id="dayDuration">12:00</div>
+                <div class="dn-range" id="dayRange">من الفجر إلى المغرب</div>
+                <div class="dn-progress"><div class="dn-progress-fill" id="dayProgress" style="width:50%"></div></div>
+            </div>
+            <div class="dn-card dn-night">
+                <div class="dn-head">
+                    <span class="dn-icon">🌙</span>
+                    <span class="dn-title">الليل</span>
+                </div>
+                <div class="dn-duration" id="nightDuration">12:00</div>
+                <div class="dn-range" id="nightRange">من المغرب إلى الفجر</div>
+                <div class="dn-progress"><div class="dn-progress-fill" id="nightProgress" style="width:50%"></div></div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-bottom:20px; color:var(--text-dim); font-size:0.85rem;">
+            🕐 المواقيت تقديرية بحسب فصول السنة (بدون GPS) — قد تختلف دقائق حسب موقعك والحساب الفقهي
+        </div>
+        <div class="prayer-times" id="prayerTimes"></div>
+
+        <h2 class="section-title" style="margin-top:50px;">أذكار الصلاة</h2>
+        <div class="verses-container" id="prayerAdhkar"></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="panel" id="panel-stats">
+        <h2 class="section-title">إنجازاتي الروحانية</h2>
+        <p class="section-subtitle">تتبع زياراتك وتفاعلك مع محتوى الموقع</p>
+        <div class="stats-grid" id="statsGrid"></div>
+
+        <h2 class="section-title" style="margin-top:50px;">الإنجازات</h2>
+        <div class="achievements-list" id="achievementsList"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="panel" id="panel-about">
+        <h2 class="section-title">حول الموقع</h2>
+
+        <div class="verse-card" style="margin-bottom:20px;">
+            <div class="v-text" style="text-align:center; font-size:1.3rem;">
+                ﴿ وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَىٰ فَادْعُوهُ بِهَا ﴾
+            </div>
+            <div class="v-ref" style="text-align:center;">سورة الأعراف — الآية ١٨٠</div>
+        </div>
+
+        <div class="verse-card">
+            <h3 style="font-family:var(--font-quran); color:var(--gold); font-size:1.4rem; margin-bottom:12px;">🌟 عن الموقع</h3>
+            <p style="color:var(--text); line-height:2; font-size:0.95rem;">
+                موقع <strong style="color:var(--gold);">«الرحمن»</strong> هو رحلة تفاعلية روحانية تهدف إلى تقريبك من الله تعالى
+                من خلال التعرف على أسمائه الحسنى، وصفاته الكاملة، وأفعاله الحكيمة،
+                مع إنفوجرافيك فلكي حيّ يعرض مواقيت الصلاة وحركة الشمس والقمر.
+                صُمم الموقع ليعمل بالكامل دون اتصال بالإنترنت.
+            </p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+            <h3 style="font-family:var(--font-quran); color:var(--gold); font-size:1.4rem; margin-bottom:12px;">✨ المزايا</h3>
+            <ul style="color:var(--text-dim); line-height:2.2; font-size:0.92rem; padding-right:20px;">
+                <li>📖 <strong style="color:var(--text);">٩٩ اسمًا</strong> من أسماء الله الحسنى مع آية لكل اسم.</li>
+                <li>🌟 <strong style="color:var(--text);">صفات الله</strong> — ١٠ بطاقات جاهزة + إضافة صفاتك.</li>
+                <li>⚡ <strong style="color:var(--text);">أفعال الله</strong> — ١٠ بطاقات جاهزة + إضافة أفعالك.</li>
+                <li>🕌 <strong style="color:var(--text);">إنفوجرافيك فلكي حيّ</strong> للشمس والقمر والليل والنهار.</li>
+                <li>📊 <strong style="color:var(--text);">تتبع الإنجازات</strong> وسجل روحاني في متصفحك.</li>
+                <li>🎨 <strong style="color:var(--text);">٦ ثيمات</strong> ليلية أنيقة تناسب كل الأذواق.</li>
+                <li>💾 <strong style="color:var(--text);">يعمل أوفلاين</strong> — بياناتك محلية في جهازك.</li>
+            </ul>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+            <h3 style="font-family:var(--font-quran); color:var(--gold); font-size:1.4rem; margin-bottom:12px;">⚠️ تنبيه</h3>
+            <p style="color:var(--text-dim); line-height:2; font-size:0.92rem;">
+                هذا الموقع <strong style="color:var(--gold);">أداة تعليمية روحانية</strong>،
+                وليس بديلًا عن العلم الشرعي المتلقى من أهله، ولا عن الصلاة، ولا عن قراءة
+                القرآن الكريم من المصحف الشريف بتدبر. جعله الله في ميزان حسناتك.
+            </p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px; text-align:center;">
+            <h3 style="font-family:var(--font-quran); color:var(--gold); font-size:1.4rem; margin-bottom:12px;">© الحقوق</h3>
+            <div class="footer-brand" style="margin-bottom:14px;">
+                <span class="brand-icon">⚖️</span>
+                <span>AhmdSchool</span>
+            </div>
+            <p style="color:var(--text); line-height:2; font-size:0.95rem;">
+                جميع الحقوق محفوظة لـ <strong style="color:var(--gold);">AhmdSchool</strong>
+            </p>
+            <p style="color:var(--text-dim); line-height:2; font-size:0.9rem; margin-top:10px;">
+                📬 للتواصل والاقتراحات:
+                <a href="mailto:ahmd@gmx.li" style="color:var(--gold); font-weight:700; text-decoration:none; border-bottom:1px dashed var(--gold);">ahmd@gmx.li</a>
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="main-footer">
+    <div class="footer-verse">
+        ﴿ إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِّأُولِي الْأَلْبَابِ ﴾
+    </div>
+    <div class="footer-brand">
+        <span class="brand-icon">⚖️</span>
+        <span>AhmdSchool</span>
+    </div>
+    <div class="footer-credit">
+        <div class="gold">موقع الرحمن — رحلة في جلال الله</div>
+        <div>صُنع بحب لخدمة كلمة الله ✦ يعمل بالكامل دون اتصال</div>
+        <div style="margin-top:10px;">
+            📬 للتواصل: <a href="mailto:ahmd@gmx.li">ahmd@gmx.li</a>
+        </div>
+        <div style="margin-top:6px; font-size:0.78rem; opacity:0.7;">
+            © AhmdSchool — جميع الحقوق محفوظة
+        </div>
+    </div>
+</footer>
+
+<!-- ===== FLOATING ===== -->
+<div class="floating-buttons">
+    <button class="fab" onclick="toggleThemeMenu()" title="تغيير الثيم">🎨</button>
+    <button class="fab" onclick="scrollToTop()" title="أعلى">⬆️</button>
+    <div class="theme-menu" id="themeMenu">
+        <div class="theme-option active" data-theme="night" title="ليلي"></div>
+        <div class="theme-option" data-theme="dawn" title="فجر"></div>
+        <div class="theme-option" data-theme="emerald" title="زمرد"></div>
+        <div class="theme-option" data-theme="royal" title="ملكي"></div>
+        <div class="theme-option" data-theme="ocean" title="محيط"></div>
+        <div class="theme-option" data-theme="rose" title="ورد"></div>
+    </div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="nameModal">
+    <div class="modal-content" id="nameModalContent"></div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast">تم ✨</div>
+
+<script>
+/* ============================================
+   DATA
+   ============================================ */
+
+// 99 Names
+const ASMA_ALLAH = [
+  {n:1, ar:"الرَّحْمَن", me:"الرحمن", d:"الذي وسعت رحمته كل شيء، ورحمته سبقت غضبه", v:"الرَّحْمَنُ عَلَى الْعَرْشِ اسْتَوَى", vr:"طه: 5"},
+  {n:2, ar:"الرَّحِيم", me:"الرحيم", d:"الموصوف بالرحمة الواسعة لعباده المؤمنين", v:"وَكَانَ بِالْمُؤْمِنِينَ رَحِيمًا", vr:"الأحزاب: 43"},
+  {n:3, ar:"الْمَلِك", me:"الملك", d:"المالك المتصرف في ملكه كيف يشاء", v:"الْمَلِكُ الْقُدُّوسُ السَّلَامُ", vr:"الحشر: 23"},
+  {n:4, ar:"الْقُدُّوس", me:"القدوس", d:"المنزه عن كل نقص وعيب", v:"الْمَلِكُ الْقُدُّوسُ السَّلَامُ", vr:"الحشر: 23"},
+  {n:5, ar:"السَّلَام", me:"السلام", d:"السالم من كل عيب، ومنه السلام لخلقه", v:"الْمَلِكُ الْقُدُّوسُ السَّلَامُ", vr:"الحشر: 23"},
+  {n:6, ar:"الْمُؤْمِن", me:"المؤمن", d:"المصدق لرسله بالمعجزات", v:"الْمُؤْمِنُ الْمُهَيْمِنُ الْعَزِيزُ", vr:"الحشر: 23"},
+  {n:7, ar:"الْمُهَيْمِن", me:"المهيمن", d:"الرقيب على كل شيء، الحافظ المسيطر", v:"الْمُؤْمِنُ الْمُهَيْمِنُ الْعَزِيزُ", vr:"الحشر: 23"},
+  {n:8, ar:"الْعَزِيز", me:"العزيز", d:"الغالب الذي لا يُغلَب", v:"وَهُوَ الْعَزِيزُ الْحَكِيمُ", vr:"النمل: 9"},
+  {n:9, ar:"الْجَبَّار", me:"الجبار", d:"الذي يُصلح كل شيء بجبروته", v:"الْجَبَّارُ الْمُتَكَبِّرُ", vr:"الحشر: 23"},
+  {n:10, ar:"الْمُتَكَبِّر", me:"المتكبر", d:"الذي تكبر عن كل سوء", v:"الْجَبَّارُ الْمُتَكَبِّرُ", vr:"الحشر: 23"},
+  {n:11, ar:"الْخَالِق", me:"الخالق", d:"الذي أوجد الأشياء من العدم", v:"هُوَ اللَّهُ الْخَالِقُ الْبَارِئُ", vr:"الحشر: 24"},
+  {n:12, ar:"الْبَارِئ", me:"البارئ", d:"المنشئ للخلق بريئًا من التفاوت", v:"الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ", vr:"الحشر: 24"},
+  {n:13, ar:"الْمُصَوِّر", me:"المصور", d:"الذي صوّر جميع المخلوقات", v:"الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ", vr:"الحشر: 24"},
+  {n:14, ar:"الْغَفَّار", me:"الغفار", d:"كثير المغفرة لعباده", v:"وَإِنِّي لَغَفَّارٌ لِّمَن تَابَ", vr:"طه: 82"},
+  {n:15, ar:"الْقَهَّار", me:"القهار", d:"الذي قهر كل شيء بقدرته", v:"الْوَاحِدُ الْقَهَّارُ", vr:"الرعد: 16"},
+  {n:16, ar:"الْوَهَّاب", me:"الوهاب", d:"كثير الهبة والعطاء", v:"يَهَبُ لِمَن يَشَاءُ إِنَاثًا", vr:"الشورى: 49"},
+  {n:17, ar:"الرَّزَّاق", me:"الرزاق", d:"الذي خلق الأرزاق وأوصلها لخلقه", v:"إِنَّ اللَّهَ هُوَ الرَّزَّاقُ", vr:"الذاريات: 58"},
+  {n:18, ar:"الْفَتَّاح", me:"الفتاح", d:"الذي يفتح المغلق، ويحكم بالحق", v:"وَهُوَ الْفَتَّاحُ الْعَلِيمُ", vr:"سبأ: 26"},
+  {n:19, ar:"الْعَلِيم", me:"العليم", d:"الذي يعلم كل شيء", v:"وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ", vr:"البقرة: 29"},
+  {n:20, ar:"الْقَابِض", me:"القابض", d:"الذي يقبض الرزق والأرواح بحكمته", v:"اللَّهُ يَقْبِضُ وَيَبْسُطُ", vr:"البقرة: 245"},
+  {n:21, ar:"الْبَاسِط", me:"الباسط", d:"الذي يبسط الرزق لمن يشاء", v:"اللَّهُ يَقْبِضُ وَيَبْسُطُ", vr:"البقرة: 245"},
+  {n:22, ar:"الْخَافِض", me:"الخافض", d:"الذي يخفض المتكبرين", v:"خَافِضَةٌ رَّافِعَةٌ", vr:"الواقعة: 3"},
+  {n:23, ar:"الرَّافِع", me:"الرافع", d:"الذي يرفع أولياءه بالطاعة", v:"رَفِيعُ الدَّرَجَاتِ", vr:"غافر: 15"},
+  {n:24, ar:"الْمُعِز", me:"المعز", d:"الذي يُعز من يشاء", v:"تُعِزُّ مَن تَشَاءُ", vr:"آل عمران: 26"},
+  {n:25, ar:"الْمُذِل", me:"المذل", d:"الذي يُذل من يشاء بحكمته", v:"وَتُذِلُّ مَن تَشَاءُ", vr:"آل عمران: 26"},
+  {n:26, ar:"السَّمِيع", me:"السميع", d:"الذي يسمع كل صوت", v:"وَهُوَ السَّمِيعُ الْعَلِيمُ", vr:"الشورى: 11"},
+  {n:27, ar:"الْبَصِير", me:"البصير", d:"الذي يرى كل شيء", v:"وَهُوَ الْبَصِيرُ", vr:"الشورى: 11"},
+  {n:28, ar:"الْحَكَم", me:"الحكم", d:"الذي يحكم بالعدل", v:"أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ", vr:"التين: 8"},
+  {n:29, ar:"الْعَدْل", me:"العدل", d:"الذي لا يجور في حكمه", v:"إِنَّ اللَّهَ هُوَ الْعَدْلُ", vr:"النحل: 90"},
+  {n:30, ar:"اللَّطِيف", me:"اللطيف", d:"البَرُّ بعباده، العالم بدقائق الأمور", v:"وَهُوَ اللَّطِيفُ الْخَبِيرُ", vr:"الأنعام: 103"},
+  {n:31, ar:"الْخَبِير", me:"الخبير", d:"العالم ببواطن الأمور", v:"وَهُوَ اللَّطِيفُ الْخَبِيرُ", vr:"الأنعام: 103"},
+  {n:32, ar:"الْحَلِيم", me:"الحليم", d:"الذي لا يعجل بالعقوبة", v:"وَاللَّهُ غَفُورٌ حَلِيمٌ", vr:"البقرة: 225"},
+  {n:33, ar:"الْعَظِيم", me:"العظيم", d:"الذي له العظمة والكبرياء", v:"وَهُوَ الْعَلِيُّ الْعَظِيمُ", vr:"البقرة: 255"},
+  {n:34, ar:"الْغَفُور", me:"الغفور", d:"كثير المغفرة، يغفر الذنوب كلها", v:"إِنَّ اللَّهَ غَفُورٌ رَّحِيمٌ", vr:"البقرة: 173"},
+  {n:35, ar:"الشَّكُور", me:"الشكور", d:"الذي يشكر القليل من العمل", v:"وَاللَّهُ شَكُورٌ حَلِيمٌ", vr:"التغابن: 17"},
+  {n:36, ar:"الْعَلِي", me:"العلي", d:"الذي علا بذاته وقدره", v:"وَهُوَ الْعَلِيُّ الْعَظِيمُ", vr:"البقرة: 255"},
+  {n:37, ar:"الْكَبِير", me:"الكبير", d:"الذي كبر عن كل شيء", v:"الْعَلِيُّ الْكَبِيرُ", vr:"الحج: 62"},
+  {n:38, ar:"الْحَفِيظ", me:"الحفيظ", d:"الذي يحفظ كل شيء", v:"وَرَبُّكَ عَلَى كُلِّ شَيْءٍ حَفِيظٌ", vr:"سبأ: 21"},
+  {n:39, ar:"الْمُقِيت", me:"المقيت", d:"الذي خلق الأقوات وأوصلها", v:"وَكَانَ اللَّهُ عَلَى كُلِّ شَيْءٍ مُقِيتًا", vr:"النساء: 85"},
+  {n:40, ar:"الْحَسِيب", me:"الحسيب", d:"الكافي عباده، الذي يحاسب خلقه", v:"وَكَفَى بِاللَّهِ حَسِيبًا", vr:"النساء: 6"},
+  {n:41, ar:"الْجَلِيل", me:"الجليل", d:"الموصوف بنعوت الجلال", v:"ذُو الْجَلَالِ وَالْإِكْرَامِ", vr:"الرحمن: 78"},
+  {n:42, ar:"الْكَرِيم", me:"الكريم", d:"كثير الخير، يعطي بلا سؤال", v:"فَإِنَّ رَبِّي غَنِيٌّ كَرِيمٌ", vr:"النمل: 40"},
+  {n:43, ar:"الرَّقِيب", me:"الرقيب", d:"الذي يراقب أحوال خلقه", v:"وَكَانَ اللَّهُ عَلَى كُلِّ شَيْءٍ رَّقِيبًا", vr:"الأحزاب: 52"},
+  {n:44, ar:"الْمُجِيب", me:"المجيب", d:"الذي يجيب دعاء الداعين", v:"إِنَّ رَبِّي قَرِيبٌ مُّجِيبٌ", vr:"هود: 61"},
+  {n:45, ar:"الْوَاسِع", me:"الواسع", d:"الواسع في علمه ورحمته", v:"وَاللَّهُ وَاسِعٌ عَلِيمٌ", vr:"البقرة: 247"},
+  {n:46, ar:"الْحَكِيم", me:"الحكيم", d:"الذي أحكم كل شيء", v:"وَهُوَ الْعَزِيزُ الْحَكِيمُ", vr:"النمل: 9"},
+  {n:47, ar:"الْوَدُود", me:"الودود", d:"المحب لأوليائه", v:"وَهُوَ الْغَفُورُ الْوَدُودُ", vr:"البروج: 14"},
+  {n:48, ar:"الْمَجِيد", me:"المجيد", d:"العظيم في ذاته وصفاته", v:"ذُو الْعَرْشِ الْمَجِيدُ", vr:"البروج: 15"},
+  {n:49, ar:"الْبَاعِث", me:"الباعث", d:"الذي يبعث الخلق يوم القيامة", v:"وَأَنَّ اللَّهَ يَبْعَثُ مَن فِي الْقُبُورِ", vr:"الحج: 7"},
+  {n:50, ar:"الشَّهِيد", me:"الشهيد", d:"الذي لا يغيب عنه شيء", v:"وَاللَّهُ عَلَى كُلِّ شَيْءٍ شَهِيدٌ", vr:"المجادلة: 6"},
+  {n:51, ar:"الْحَق", me:"الحق", d:"الموجود الذي لا يزول", v:"ذَٰلِكَ بِأَنَّ اللَّهَ هُوَ الْحَقُّ", vr:"الحج: 62"},
+  {n:52, ar:"الْوَكِيل", me:"الوكيل", d:"القائم بمصالح عباده", v:"وَكَفَى بِاللَّهِ وَكِيلًا", vr:"النساء: 81"},
+  {n:53, ar:"الْقَوِي", me:"القوي", d:"التام القوة، لا يعجزه شيء", v:"إِنَّ اللَّهَ لَقَوِيٌّ عَزِيزٌ", vr:"الحج: 40"},
+  {n:54, ar:"الْمَتِين", me:"المتين", d:"شديد القوة، لا تنقطع قوته", v:"ذُو الْقُوَّةِ الْمَتِينُ", vr:"الذاريات: 58"},
+  {n:55, ar:"الْوَلِي", me:"الولي", d:"الناصر لعباده المؤمنين", v:"وَاللَّهُ وَلِيُّ الْمُؤْمِنِينَ", vr:"آل عمران: 68"},
+  {n:56, ar:"الْحَمِيد", me:"الحميد", d:"المحمود على كل حال", v:"إِنَّهُ حَمِيدٌ مَجِيدٌ", vr:"هود: 73"},
+  {n:57, ar:"الْمُحْصِي", me:"المحصي", d:"الذي أحصى كل شيء عددًا", v:"وَأَحْصَىٰ كُلَّ شَيْءٍ عَدَدًا", vr:"الجن: 28"},
+  {n:58, ar:"الْمُبْدِئ", me:"المبدئ", d:"الذي بدأ الخلق وأوجدهم", v:"إِنَّهُ هُوَ يُبْدِئُ وَيُعِيدُ", vr:"البروج: 13"},
+  {n:59, ar:"الْمُعِيد", me:"المعيد", d:"الذي يعيد الخلق بعد الفناء", v:"إِنَّهُ هُوَ يُبْدِئُ وَيُعِيدُ", vr:"البروج: 13"},
+  {n:60, ar:"الْمُحْيِي", me:"المحيي", d:"الذي يحيي الموتى والأرض", v:"وَأَنَّهُ هُوَ يُحْيِي وَيُمِيتُ", vr:"النجم: 44"},
+  {n:61, ar:"الْمُمِيت", me:"المميت", d:"الذي يقضي بالموت على من أراد", v:"الَّذِي خَلَقَ الْمَوْتَ وَالْحَيَاةَ", vr:"الملك: 2"},
+  {n:62, ar:"الْحَي", me:"الحي", d:"الحي حياةً كاملة أبدية", v:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ", vr:"البقرة: 255"},
+  {n:63, ar:"الْقَيُّوم", me:"القيوم", d:"القائم بنفسه، المقيم لغيره", v:"الْحَيُّ الْقَيُّومُ", vr:"البقرة: 255"},
+  {n:64, ar:"الْوَاجِد", me:"الواجد", d:"الغني الذي لا يفقد شيئًا", v:"وَوَجَدَ اللَّهَ عِندَهُ", vr:"النور: 39"},
+  {n:65, ar:"الْمَاجِد", me:"الماجد", d:"العظيم الكريم", v:"ذُو الْعَرْشِ الْمَجِيدُ", vr:"البروج: 15"},
+  {n:66, ar:"الْوَاحِد", me:"الواحد", d:"المتفرد بالذات والصفات", v:"وَإِلَٰهُكُمْ إِلَٰهٌ وَاحِدٌ", vr:"البقرة: 163"},
+  {n:67, ar:"الْأَحَد", me:"الأحد", d:"الفرد الذي لا نظير له", v:"قُلْ هُوَ اللَّهُ أَحَدٌ", vr:"الإخلاص: 1"},
+  {n:68, ar:"الصَّمَد", me:"الصمد", d:"السيد المقصود في الحوائج", v:"اللَّهُ الصَّمَدُ", vr:"الإخلاص: 2"},
+  {n:69, ar:"الْقَادِر", me:"القادر", d:"الذي لا يعجزه شيء", v:"وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ", vr:"الملك: 1"},
+  {n:70, ar:"الْمُقْتَدِر", me:"المقتدر", d:"التام القدرة", v:"عِندَ مَلِيكٍ مُّقْتَدِرٍ", vr:"القمر: 55"},
+  {n:71, ar:"الْمُقَدِّم", me:"المقدم", d:"الذي يقدم من يشاء", v:"إِنَّ اللَّهَ يُقَدِّمُ مَا يَشَاءُ", vr:"—"},
+  {n:72, ar:"الْمُؤَخِّر", me:"المؤخر", d:"الذي يؤخر ما يشاء بحكمته", v:"وَمَا نُؤَخِّرُهُ إِلَّا لِأَجَلٍ مَّعْدُودٍ", vr:"هود: 104"},
+  {n:73, ar:"الْأَوَّل", me:"الأول", d:"الذي ليس قبله شيء", v:"هُوَ الْأَوَّلُ وَالْآخِرُ", vr:"الحديد: 3"},
+  {n:74, ar:"الْآخِر", me:"الآخر", d:"الذي ليس بعده شيء", v:"هُوَ الْأَوَّلُ وَالْآخِرُ", vr:"الحديد: 3"},
+  {n:75, ar:"الظَّاهِر", me:"الظاهر", d:"الظاهر بأدلته، العالي فوق كل شيء", v:"الظَّاهِرُ وَالْبَاطِنُ", vr:"الحديد: 3"},
+  {n:76, ar:"الْبَاطِن", me:"الباطن", d:"العالم بالخفيّات", v:"وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ", vr:"الحديد: 3"},
+  {n:77, ar:"الْوَالِي", me:"الوالي", d:"المالك المتصرف", v:"وَهُوَ الْوَالِي", vr:"الرعد: 11"},
+  {n:78, ar:"الْمُتَعَالِي", me:"المتعالي", d:"المنزه عن كل نقص", v:"الْكَبِيرُ الْمُتَعَالِ", vr:"الرعد: 9"},
+  {n:79, ar:"الْبَر", me:"البر", d:"المحسن إلى عباده", v:"إِنَّهُ هُوَ الْبَرُّ الرَّحِيمُ", vr:"الطور: 28"},
+  {n:80, ar:"التَّوَّاب", me:"التواب", d:"الذي يقبل توبة عباده", v:"إِنَّهُ هُوَ التَّوَّابُ الرَّحِيمُ", vr:"البقرة: 37"},
+  {n:81, ar:"الْمُنْتَقِم", me:"المنتقم", d:"الذي ينتقم من الظالمين", v:"وَاللَّهُ عَزِيزٌ ذُو انتِقَامٍ", vr:"إبراهيم: 47"},
+  {n:82, ar:"الْعَفُو", me:"العفو", d:"الذي يعفو عن السيئات", v:"إِنَّ اللَّهَ كَانَ عَفُوًّا غَفُورًا", vr:"النساء: 43"},
+  {n:83, ar:"الرَّءُوف", me:"الرؤوف", d:"شديد الرحمة والعطف", v:"إِنَّ اللَّهَ بِالنَّاسِ لَرَءُوفٌ رَّحِيمٌ", vr:"البقرة: 143"},
+  {n:84, ar:"مَالِكُ الْمُلْك", me:"مالك الملك", d:"المتصرف في ملكه كيف يشاء", v:"قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ", vr:"آل عمران: 26"},
+  {n:85, ar:"ذُو الْجَلَالِ وَالْإِكْرَام", me:"ذو الجلال والإكرام", d:"صاحب العظمة والكبرياء", v:"ذُو الْجَلَالِ وَالْإِكْرَامِ", vr:"الرحمن: 78"},
+  {n:86, ar:"الْمُقْسِط", me:"المقسط", d:"العادل في حكمه", v:"وَأَنَّ اللَّهَ لَيْسَ بِظَلَّامٍ لِّلْعَبِيدِ", vr:"آل عمران: 182"},
+  {n:87, ar:"الْجَامِع", me:"الجامع", d:"الذي يجمع الخلائق ليوم الحساب", v:"رَبَّنَا إِنَّكَ جَامِعُ النَّاسِ", vr:"آل عمران: 9"},
+  {n:88, ar:"الْغَنِي", me:"الغني", d:"الذي لا يحتاج إلى شيء", v:"وَاللَّهُ الْغَنِيُّ الْحَمِيدُ", vr:"البقرة: 267"},
+  {n:89, ar:"الْمُغْنِي", me:"المغني", d:"الذي يغني من يشاء", v:"وَأَنَّهُ هُوَ أَغْنَىٰ وَأَقْنَىٰ", vr:"النجم: 48"},
+  {n:90, ar:"الْمَانِع", me:"المانع", d:"الذي يمنع بحكمته", v:"وَإِن يَمْسَسْكَ اللَّهُ بِضُرٍّ فَلَا كَاشِفَ لَهُ", vr:"الأنعام: 17"},
+  {n:91, ar:"الضَّار", me:"الضار", d:"الذي يضر من يشاء بحكمته", v:"وَإِن يَمْسَسْكَ اللَّهُ بِضُرٍّ", vr:"الأنعام: 17"},
+  {n:92, ar:"النَّافِع", me:"النافع", d:"الذي ينفع من يشاء", v:"قُلْ فَإِنَّ الْفَضْلَ بِيَدِ اللَّهِ", vr:"آل عمران: 73"},
+  {n:93, ar:"النُّور", me:"النور", d:"الهادي، نور السماوات والأرض", v:"اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ", vr:"النور: 35"},
+  {n:94, ar:"الْهَادِي", me:"الهادي", d:"الذي يهدي عباده إلى الحق", v:"وَإِنَّ اللَّهَ لَهَادِ الَّذِينَ آمَنُوا", vr:"الحج: 54"},
+  {n:95, ar:"الْبَدِيع", me:"البديع", d:"الخالق على غير مثال سابق", v:"بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ", vr:"البقرة: 117"},
+  {n:96, ar:"الْبَاقِي", me:"الباقي", d:"الدائم الذي لا يفنى", v:"وَيَبْقَىٰ وَجْهُ رَبِّكَ", vr:"الرحمن: 27"},
+  {n:97, ar:"الْوَارِث", me:"الوارث", d:"الباقي بعد فناء الخلق", v:"وَنَحْنُ الْوَارِثُونَ", vr:"الحجر: 23"},
+  {n:98, ar:"الرَّشِيد", me:"الرشيد", d:"الذي أفعاله على سنن الحكمة", v:"وَمَن يَهْدِ اللَّهُ فَهُوَ الْمُهْتَدِ", vr:"الكهف: 17"},
+  {n:99, ar:"الصَّبُور", me:"الصبور", d:"الذي لا يعجل بعقوبة العصاة", v:"وَاللَّهُ غَفُورٌ حَلِيمٌ", vr:"التغابن: 14"}
+];
+
+// Sifat (10 default + user can add)
+const DEFAULT_SIFAT = [
+    {ar:"الحياة", me:"الحياة الكاملة", d:"الله تعالى حي حياةً كاملة لم تسبقها عدمية، ولا يلحقها فناء، حياته ذاتية أبدية سرمدية، لا يعتريها موت ولا نقص.", v:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ", vr:"البقرة: 255"},
+    {ar:"القيومية", me:"القيومية", d:"الله قائم بنفسه، غني عن كل ما سواه، وكل شيء قائم به سبحانه. لا يقوم لغيره قيام، بل هو مقيم لكل شيء.", v:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ", vr:"البقرة: 255"},
+    {ar:"الأحدية", me:"الأحدية", d:"الله واحد أحد، فرد صمد، لا ثاني له ولا شريك، لا في ذاته ولا في صفاته ولا في أفعاله.", v:"قُلْ هُوَ اللَّهُ أَحَدٌ", vr:"الإخلاص: 1"},
+    {ar:"الصمدية", me:"الصمدية", d:"الصمد الذي تقصده الخلائق في حوائجها، وهو الغني عن كل شيء، السيد الذي كمل في سؤدده.", v:"اللَّهُ الصَّمَدُ", vr:"الإخلاص: 2"},
+    {ar:"العلم", me:"العلم المحيط", d:"علم الله محيط بكل شيء، لا يخفى عليه مثقال ذرة في السماوات ولا في الأرض، يعلم ما كان وما سيكون وما لم يكن لو كان كيف يكون.", v:"وَعِندَهُ مَفَاتِحُ الْغَيْبِ لَا يَعْلَمُهَا إِلَّا هُوَ", vr:"الأنعام: 59"},
+    {ar:"القدرة", me:"القدرة التامة", d:"قدرة الله تامة لا يعجزها شيء، ولا يمتنع عليها أمر، إذا أراد شيئًا فإنما يقول له كن فيكون.", v:"إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ", vr:"البقرة: 20"},
+    {ar:"الإرادة", me:"الإرادة", d:"إرادة الله نافذة في ملكه، يفعل ما يشاء ويختار، لا معقب لحكمه ولا راد لقضائه.", v:"إِنَّمَا أَمْرُهُ إِذَا أَرَادَ شَيْئًا أَن يَقُولَ لَهُ كُن فَيَكُونُ", vr:"يس: 82"},
+    {ar:"السمع", me:"السمع المحيط", d:"يسمع الله كل صوت، لا يشغله سمع عن سمع، يسمع دبيب النملة السوداء في الصخرة الصماء في الليلة الظلماء.", v:"قَدْ سَمِعَ اللَّهُ قَوْلَ الَّتِي تُجَادِلُكَ", vr:"المجادلة: 1"},
+    {ar:"البصر", me:"البصر النافذ", d:"يرى الله كل شيء، لا يخفى عليه شيء، يرى السواد في الظلمة، والدبيب على الصخر الأصم.", v:"وَهُوَ الْبَصِيرُ", vr:"الشورى: 11"},
+    {ar:"الكلام", me:"الكلام", d:"الله متكلم بكلام حقيقي، أنزل الكتب على رسله، وتكلم بالقرآن والتوراة والإنجيل والزبور.", v:"وَكَلَّمَ اللَّهُ مُوسَىٰ تَكْلِيمًا", vr:"النساء: 164"},
+    {ar:"العلو", me:"العلو والفوقية", d:"الله العلي الأعلى، فوق كل شيء بذاته وقدره وقهره، مستوٍ على عرشه استواءً يليق بجلاله.", v:"وَهُوَ الْعَلِيُّ الْعَظِيمُ", vr:"البقرة: 255"}
+];
+
+// Af'al (10 default + user can add)
+const DEFAULT_AFAL = [
+    {ar:"الخلق", me:"خلق الكون", d:"الله خالق كل شيء، أوجد الخلق من العدم على غير مثال سابق، وأبدع في خلقه كل شيء فأحسن صورته.", v:"اللَّهُ خَالِقُ كُلِّ شَيْءٍ", vr:"الزمر: 62"},
+    {ar:"الرزق", me:"الرزق", d:"الله يرزق كل دابة في الأرض، وأوصل الأرزاق إلى خلقه بأسباب يعلمها هو، لا ينسى أحدًا.", v:"وَمَا مِن دَابَّةٍ فِي الْأَرْضِ إِلَّا عَلَى اللَّهِ رِزْقُهَا", vr:"هود: 6"},
+    {ar:"الهداية", me:"الهداية", d:"الله يهدي من يشاء إلى الصراط المستقيم، ويفتح القلوب ليقبل الحق، ويهدي الحيوانات لمعاشها.", v:"وَاللَّهُ يَهْدِي مَن يَشَاءُ إِلَىٰ صِرَاطٍ مُّسْتَقِيمٍ", vr:"النور: 46"},
+    {ar:"المغفرة", me:"المغفرة", d:"الله يغفر الذنوب لمن تاب، ويقبل التوبة الصادقة، ويمحو السيئات بالحسنات، وهو الغفور الرحيم.", v:"وَمَن يَغْفِرُ الذُّنُوبَ إِلَّا اللَّهُ", vr:"آل عمران: 135"},
+    {ar:"الإحياء", me:"الإحياء", d:"الله يحيي الموتى يوم القيامة، ويحيي الأرض بعد موتها بالمطر، ويحيي القلوب بذكره.", v:"وَهُوَ الَّذِي يُحْيِي وَيُمِيتُ", vr:"المؤمنون: 80"},
+    {ar:"الإماتة", me:"الإماتة", d:"الله يميت الأحياء بأجل مسمى، لا يتقدم أحد عن أجله ولا يتأخر، وفي ذلك حكمة بالغة.", v:"كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ", vr:"آل عمران: 185"},
+    {ar:"البعث", me:"البعث", d:"الله يبعث الخلق يوم القيامة من قبورهم، ويجمعهم لحساب عادل، لا يظلم مثقال ذرة.", v:"وَأَنَّ اللَّهَ يَبْعَثُ مَن فِي الْقُبُورِ", vr:"الحج: 7"},
+    {ar:"الحساب", me:"الحساب", d:"الله يحاسب كل نفس بما كسبت، لا يظلم أحدًا، ويضع الموازين القسط ليوم القيامة.", v:"وَنَضَعُ الْمَوَازِينَ الْقِسْطَ لِيَوْمِ الْقِيَامَةِ", vr:"الأنبياء: 47"},
+    {ar:"الجزاء", me:"الجزاء", d:"الله يجزي المحسنين بالإحسان، والمسيئين بما عملوا، وفضله فوق كل جزاء.", v:"هَلْ جَزَاءُ الْإِحْسَانِ إِلَّا الْإِحْسَانُ", vr:"الرحمن: 60"},
+    {ar:"التدبير", me:"تدبير الأمور", d:"الله يدبر الأمر من السماء إلى الأرض، لا يفوته شيء، ولا يعزب عن علمه شيء، حكيم في تدبيره.", v:"يُدَبِّرُ الْأَمْرَ مِنَ السَّمَاءِ إِلَى الْأَرْضِ", vr:"السجدة: 5"}
+];
+
+// Adhkar after prayer
+const PRAYER_ADHKAR = [
+    {t:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ", r:"متفق عليه", tag:"بعد الصلاة"},
+    {t:"اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ", r:"مسلم", tag:"بعد الصلاة"},
+    {t:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ", r:"متفق عليه", tag:"خير ما يقال"},
+    {t:"اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ", r:"أبو داود", tag:"وصية النبي ﷺ"},
+    {t:"اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى", r:"مسلم", tag:"دعاء"},
+    {t:"رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ", r:"البقرة: 201", tag:"دعاء جامع"},
+    {t:"اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ", r:"—", tag:"الصلاة على النبي"},
+    {t:"أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ", r:"متفق عليه", tag:"الاستغفار"}
+];
+
+// Random verses for home
+const VERSES = [
+    {t:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ", r:"البقرة: 255"},
+    {t:"وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ", r:"البقرة: 186"},
+    {t:"أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ", r:"الرعد: 28"},
+    {t:"وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ", r:"الحديد: 4"},
+    {t:"إِنَّ اللَّهَ مَعَ الصَّابِرِينَ", r:"البقرة: 153"},
+    {t:"وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ", r:"الطلاق: 3"},
+    {t:"فَاذْكُرُونِي أَذْكُرْكُمْ", r:"البقرة: 152"},
+    {t:"وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ", r:"البقرة: 216"}
+];
+
+/* ============================================
+   STATE
+   ============================================ */
+const state = {
+    currentPanel: 'home',
+    theme: 'night',
+    customSifat: JSON.parse(localStorage.getItem('rahman_custom_sifat') || '[]'),
+    customAfal: JSON.parse(localStorage.getItem('rahman_custom_afal') || '[]'),
+    visits: parseInt(localStorage.getItem('rahman_visits') || '0'),
+    lastVisit: localStorage.getItem('rahman_last_visit') || '',
+    streak: parseInt(localStorage.getItem('rahman_streak') || '0')
+};
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+function $(s, p) { return (p || document).querySelector(s); }
+function $$(s, p) { return Array.from((p || document).querySelectorAll(s)); }
+function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function showToast(msg) {
+    const t = $('#toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._t);
+    t._t = setTimeout(() => t.classList.remove('show'), 2400);
+}
+function uid() { return 'c_' + Date.now() + '_' + Math.random().toString(36).slice(2,7); }
+
+/* ============================================
+   LOADER
+   ============================================ */
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        $('#loader').classList.add('hidden');
+    }, 1200);
+});
+
+/* ============================================
+   THEME
+   ============================================ */
+const THEMES = ['night', 'dawn', 'emerald', 'royal', 'ocean', 'rose'];
+
+function applyTheme(theme) {
+    if (!THEMES.includes(theme)) theme = 'night';
+    document.body.setAttribute('data-theme', theme);
+    state.theme = theme;
+    localStorage.setItem('rahman_theme', theme);
+    $$('.theme-option').forEach(o => {
+        o.classList.toggle('active', o.dataset.theme === theme);
+    });
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const colors = { night:'#0a0e1a', dawn:'#2d1b3d', emerald:'#022c22', royal:'#1a0b2e', ocean:'#041e2e', rose:'#2d0a1e' };
+    if (meta) meta.setAttribute('content', colors[theme] || '#0a0e1a');
+}
+function toggleThemeMenu() { $('#themeMenu').classList.toggle('show'); }
+function initThemePicker() {
+    $$('.theme-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+            applyTheme(opt.dataset.theme);
+            $('#themeMenu').classList.remove('show');
+            showToast('🎨 ' + (opt.title || 'تم'));
+        });
+    });
+    document.addEventListener('click', (e) => {
+        const menu = $('#themeMenu');
+        if (menu.classList.contains('show') && !menu.contains(e.target) && e.target.tagName !== 'BUTTON') {
+            menu.classList.remove('show');
+        }
+    });
+}
+
+/* ============================================
+   TABS
+   ============================================ */
+function initTabs() {
+    $$('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => switchToPanel(btn.dataset.panel));
+    });
+}
+function switchToPanel(panelId) {
+    state.currentPanel = panelId;
+    $$('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.panel === panelId));
+    $$('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + panelId));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (panelId === 'prayers') updateCelestialStage();
+}
+
+/* ============================================
+   CLOCK & PRAYERS
+   ============================================ */
+function updateClock() {
+    const now = new Date();
+    const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+    const clockEl = $('#clockTime');
+    if (clockEl) clockEl.textContent = timeStr;
+
+    const dateEl = $('#clockDate');
+    if (dateEl) {
+        const dateStr = now.toLocaleDateString('ar-EG', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+        dateEl.textContent = dateStr;
+    }
+
+    const prayers = getPrayerTimes(now);
+    const upcoming = prayers.find(p => p.time > now) || prayers[0];
+    const prayerEl = $('#nextPrayer');
+    if (prayerEl) prayerEl.textContent = `🕌 الصلاة القادمة: ${upcoming.name} (${formatTime(upcoming.time)})`;
+
+    updatePrayerHighlight(prayers, now);
+    updateCelestialStage();
+
+    // Update info panel
+    const ciTime = $('#ciTime'); if (ciTime) ciTime.textContent = formatTime(now);
+}
+
+function formatTime(date) {
+    return `${String(date.getHours()).padStart(2,'0')}:${String(date.getMinutes()).padStart(2,'0')}`;
+}
+function formatDuration(minutes) {
+    const h = Math.floor(minutes / 60);
+    const m = Math.round(minutes % 60);
+    return `${h}:${String(m).padStart(2,'0')}`;
+}
+
+function getPrayerTimes(date) {
+    const month = date.getMonth();
+    const baseTimes = {
+        fajr:    { h: 4, m: 30 },
+        sunrise: { h: 6, m: 0 },
+        dhuhr:   { h: 12, m: 5 },
+        asr:     { h: 15, m: 30 },
+        maghrib: { h: 18, m: 30 },
+        isha:    { h: 20, m: 0 }
+    };
+    const seasonalShift = (month >= 10 || month <= 1) ? -45 : (month >= 4 && month <= 7) ? 30 : 0;
+    const buildTime = (base) => {
+        const d = new Date(date);
+        d.setHours(base.h, base.m + seasonalShift, 0, 0);
+        return d;
+    };
+    return [
+        { name:'الفجر',   time: buildTime(baseTimes.fajr),    icon:'🌙', key:'fajr' },
+        { name:'الشروق',  time: buildTime(baseTimes.sunrise), icon:'🌅', key:'sunrise' },
+        { name:'الظهر',   time: buildTime(baseTimes.dhuhr),   icon:'☀️', key:'dhuhr' },
+        { name:'العصر',   time: buildTime(baseTimes.asr),     icon:'🌤️', key:'asr' },
+        { name:'المغرب',  time: buildTime(baseTimes.maghrib), icon:'🌇', key:'maghrib' },
+        { name:'العشاء',  time: buildTime(baseTimes.isha),    icon:'🌃', key:'isha' }
+    ];
+}
+
+function updatePrayerHighlight(prayers, now) {
+    let current = prayers[0];
+    for (const p of prayers) {
+        if (p.time <= now) current = p;
+        else break;
+    }
+    $$('.prayer-card').forEach(card => {
+        card.classList.toggle('active', card.dataset.key === current.key);
+    });
+}
+
+function renderPrayerTimes() {
+    const container = $('#prayerTimes');
+    if (!container) return;
+    const prayers = getPrayerTimes(new Date());
+    container.innerHTML = prayers.map(p => `
+        <div class="prayer-card" data-key="${p.key}">
+            <div class="prayer-icon">${p.icon}</div>
+            <div class="prayer-name">${p.name}</div>
+            <div class="prayer-time">${formatTime(p.time)}</div>
+        </div>
+    `).join('');
+}
+
+/* ============================================
+   CELESTIAL INFOGRAPHIC
+   ============================================ */
+function updateCelestialStage() {
+    const stage = $('#celestialStage');
+    if (!stage) return;
+
+    const sun = $('#sunOrb');
+    const moon = $('#moonOrb');
+    if (!sun || !moon) return;
+
+    const now = new Date();
+    const prayers = getPrayerTimes(now);
+
+    const fajr = prayers[0].time;
+    const sunrise = prayers[1].time;
+    const maghrib = prayers[4].time;
+    const isha = prayers[5].time;
+
+    // Day/night durations in minutes
+    const dayStart = new Date(sunrise);
+    const dayEnd = new Date(maghrib);
+    const dayMinutes = (dayEnd - dayStart) / (1000 * 60);
+    const nightMinutes = 24 * 60 - dayMinutes;
+
+    // Duration strings
+    const dayDur = $('#dayDuration');
+    const nightDur = $('#nightDuration');
+    if (dayDur) dayDur.textContent = formatDuration(dayMinutes) + ' س';
+    if (nightDur) nightDur.textContent = formatDuration(nightMinutes) + ' س';
+
+    const dayRange = $('#dayRange');
+    const nightRange = $('#nightRange');
+    if (dayRange) dayRange.textContent = `من ${formatTime(sunrise)} إلى ${formatTime(maghrib)}`;
+    if (nightRange) nightRange.textContent = `من ${formatTime(maghrib)} إلى ${formatTime(sunrise)}`;
+
+    // Progress within day/night
+    let dayProgress = 0, nightProgress = 0;
+    const nowMs = now.getTime();
+
+    if (nowMs >= sunrise.getTime() && nowMs <= maghrib.getTime()) {
+        dayProgress = ((nowMs - sunrise.getTime()) / (maghrib.getTime() - sunrise.getTime())) * 100;
+        nightProgress = 0;
+    } else {
+        dayProgress = 0;
+        // Night: from maghrib to next day's sunrise
+        let nightStart, nightEnd;
+        if (nowMs > maghrib.getTime()) {
+            nightStart = maghrib.getTime();
+            const tomorrow = new Date(sunrise);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            nightEnd = tomorrow.getTime();
+        } else {
+            nightStart = new Date(maghrib).setDate(new Date(maghrib).getDate() - 1);
+            nightEnd = sunrise.getTime();
+        }
+        nightProgress = ((nowMs - nightStart) / (nightEnd - nightStart)) * 100;
+    }
+
+    const dayFill = $('#dayProgress');
+    const nightFill = $('#nightProgress');
+    if (dayFill) dayFill.style.width = Math.max(0, Math.min(100, dayProgress)) + '%';
+    if (nightFill) nightFill.style.width = Math.max(0, Math.min(100, nightProgress)) + '%';
+
+    // Sun position: horizontal from left (sunrise) to right (maghrib)
+    const stageWidth = stage.offsetWidth;
+    const stageHeight = stage.offsetHeight;
+
+    const sunSize = window.innerWidth <= 640 ? 44 : 58;
+    const moonSize = window.innerWidth <= 640 ? 36 : 48;
+
+    const isDay = nowMs >= sunrise.getTime() && nowMs <= maghrib.getTime();
+
+    // Compute sun X position
+    let sunX;
+    if (isDay) {
+        sunX = ((nowMs - sunrise.getTime()) / (maghrib.getTime() - sunrise.getTime())) * (stageWidth - sunSize - 20) + 10;
+    } else {
+        // Sun is off-screen (behind horizon)
+        if (nowMs > maghrib.getTime()) {
+            sunX = stageWidth + sunSize;
+        } else {
+            sunX = -sunSize - 10;
+        }
+    }
+
+    // Sun Y position (parabola)
+    const dayTotal = maghrib.getTime() - sunrise.getTime();
+    let sunY;
+    if (isDay) {
+        const p = (nowMs - sunrise.getTime()) / dayTotal;
+        const maxHeight = stageHeight * 0.55;
+        sunY = stageHeight * 0.78 - Math.sin(p * Math.PI) * maxHeight;
+    } else {
+        sunY = stageHeight * 0.9; // below horizon
+    }
+
+    sun.style.left = sunX + 'px';
+    sun.style.top = sunY + 'px';
+    sun.style.opacity = isDay ? '1' : '0.15';
+
+    // Moon position - opposite phase
+    const moonIsUp = !isDay;
+    let moonX, moonY;
+    if (moonIsUp) {
+        let moonStart, moonEnd;
+        if (nowMs > maghrib.getTime()) {
+            moonStart = maghrib.getTime();
+            const tomorrow = new Date(sunrise);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            moonEnd = tomorrow.getTime();
+        } else {
+            const yesterday = new Date(maghrib);
+            yesterday.setDate(yesterday.getDate() - 1);
+            moonStart = yesterday.getTime();
+            moonEnd = sunrise.getTime();
+        }
+        const p = (nowMs - moonStart) / (moonEnd - moonStart);
+        moonX = p * (stageWidth - moonSize - 20) + 10;
+        const maxHeight = stageHeight * 0.55;
+        moonY = stageHeight * 0.78 - Math.sin(p * Math.PI) * maxHeight;
+    } else {
+        moonX = stageWidth + moonSize;
+        moonY = stageHeight * 0.9;
+    }
+
+    moon.style.left = moonX + 'px';
+    moon.style.top = moonY + 'px';
+    moon.style.opacity = moonIsUp ? '1' : '0.2';
+
+    // Status text
+    const status = $('#celestialStatus');
+    if (status) {
+        if (isDay) {
+            if (nowMs < prayers[2].time.getTime()) {
+                status.textContent = '☀️ ضحى — الشمس في ascend';
+            } else {
+                status.textContent = '🌤️ عصر — الشمس في descend';
+            }
+        } else {
+            if (nowMs >= isha.getTime() || nowMs < fajr.getTime()) {
+                status.textContent = '🌙 ليل — القمر في السماء';
+            } else {
+                status.textContent = '🌌 سحر — قرب الفجر';
+            }
+        }
+    }
+
+    // Info: moonrise/moonset (approximation - moon rises at sunset, sets at sunrise)
+    const ciSunrise = $('#ciSunrise'); if (ciSunrise) ciSunrise.textContent = formatTime(sunrise);
+    const ciSunset = $('#ciSunset'); if (ciSunset) ciSunset.textContent = formatTime(maghrib);
+    const ciMoonrise = $('#ciMoonrise'); if (ciMoonrise) ciMoonrise.textContent = formatTime(maghrib);
+    const ciMoonset = $('#ciMoonset'); if (ciMoonset) ciMoonset.textContent = formatTime(sunrise);
+
+    // Constellation stars
+    const constEl = $('#constellation');
+    if (constEl && constEl.children.length === 0) {
+        for (let i = 0; i < 20; i++) {
+            const star = document.createElement('div');
+            star.className = 'c-star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 70 + '%';
+            star.style.animationDelay = (Math.random() * 2) + 's';
+            star.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+            constEl.appendChild(star);
+        }
+    }
+}
+
+/* ============================================
+   HOME
+   ============================================ */
+function showRandomVerse() {
+    const v = VERSES[Math.floor(Math.random() * VERSES.length)];
+    const el = $('#randomVerse');
+    const ref = $('#randomVerseRef');
+    if (el) el.textContent = v.t;
+    if (ref) ref.textContent = `سورة ${v.r}`;
+}
+
+/* ============================================
+   NAMES
+   ============================================ */
+function renderNames(filter = '') {
+    const grid = $('#namesGrid');
+    if (!grid) return;
+    const q = filter.trim().toLowerCase();
+    const filtered = ASMA_ALLAH.filter(n =>
+        !q || n.ar.includes(q) || n.me.includes(q) || n.d.includes(q)
+    );
+    grid.innerHTML = filtered.map(n => `
+        <div class="name-card" data-num="${n.n}">
+            <div class="name-number">#${n.n}</div>
+            <div class="name-arabic">${n.ar}</div>
+            <div class="name-meaning">${n.me}</div>
+        </div>
+    `).join('');
+    grid.querySelectorAll('.name-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const num = parseInt(card.dataset.num);
+            const name = ASMA_ALLAH.find(x => x.n === num);
+            if (name) showNameModal(name, 'اسم');
+        });
+    });
+}
+
+/* ============================================
+   SIFAT
+   ============================================ */
+function getAllSifat() {
+    return [...DEFAULT_SIFAT, ...state.customSifat];
+}
+function renderSifat(filter = '') {
+    const grid = $('#sifatGrid');
+    if (!grid) return;
+    const q = filter.trim().toLowerCase();
+    const all = getAllSifat();
+    const filtered = all.filter(s =>
+        !q || s.ar.includes(q) || s.me.includes(q) || s.d.includes(q)
+    );
+    grid.innerHTML = filtered.map((s, idx) => {
+        const isCustom = idx >= DEFAULT_SIFAT.length;
+        const realIdx = isCustom ? idx - DEFAULT_SIFAT.length : idx;
+        return `
+            <div class="name-card sifat-card ${isCustom ? 'custom-card' : ''}" data-idx="${idx}" data-custom="${isCustom}" data-real="${realIdx}">
+                ${isCustom ? `<button class="delete-custom" onclick="event.stopPropagation(); deleteSifat(${realIdx})">✕</button>` : ''}
+                <div class="card-tag">${isCustom ? 'مضافة' : 'صفة'}</div>
+                <div class="name-arabic">${escapeHtml(s.ar)}</div>
+                <div class="name-meaning">${escapeHtml(s.me)}</div>
+                <div class="card-verse-hint">﴿ ${escapeHtml(s.v.length > 40 ? s.v.slice(0, 40) + '…' : s.v)} ﴾</div>
+            </div>
+        `;
+    }).join('') + `
+        <div class="name-card add-new-card" onclick="openAddSifatModal()">
+            <div class="name-arabic">＋</div>
+            <div class="name-meaning">أضف صفة</div>
+        </div>
+    `;
+
+    grid.querySelectorAll('.sifat-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.delete-custom')) return;
+            const isCustom = card.dataset.custom === 'true';
+            const realIdx = parseInt(card.dataset.real);
+            const item = isCustom ? state.customSifat[realIdx] : DEFAULT_SIFAT[realIdx];
+            if (item) showNameModal(item, 'صفة');
+        });
+    });
+}
+
+function openAddSifatModal() {
+    const modal = $('#nameModal');
+    const content = $('#nameModalContent');
+    content.innerHTML = `
+        <button class="modal-close" onclick="closeNameModal()">✕</button>
+        <h3 style="font-family:var(--font-quran); color:var(--gold); font-size:1.6rem; margin-bottom:20px;">🌟 إضافة صفة جديدة</h3>
+        <div class="form-group">
+            <label>الصفة *</label>
+            <input type="text" id="newSifaName" placeholder="مثال: الرحمة">
+        </div>
+        <div class="form-group">
+            <label>المعنى المختصر</label>
+            <input type="text" id="newSifaMe" placeholder="وصف موجز للصفة">
+        </div>
+        <div class="form-group">
+            <label>الشرح *</label>
+            <textarea id="newSifaDesc" placeholder="اشرح الصفة بكلماتك..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>الآية القرآنية *</label>
+            <textarea id="newSifaVerse" placeholder="﴿ ... ﴾" style="min-height:80px;"></textarea>
+        </div>
+        <div class="form-group">
+            <label>المرجع</label>
+            <input type="text" id="newSifaRef" placeholder="مثال: البقرة: 255">
+        </div>
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+            <button class="btn btn-primary" onclick="saveSifat()">💾 حفظ الصفة</button>
+            <button class="btn" onclick="closeNameModal()">إلغاء</button>
+        </div>
+    `;
+    modal.classList.add('show');
+    setTimeout(() => $('#newSifaName')?.focus(), 100);
+}
+
+function saveSifat() {
+    const ar = $('#newSifaName').value.trim();
+    const me = $('#newSifaMe').value.trim() || ar;
+    const d = $('#newSifaDesc').value.trim();
+    const v = $('#newSifaVerse').value.trim();
+    const vr = $('#newSifaRef').value.trim() || '—';
+    if (!ar || !d || !v) {
+        showToast('⚠️ أكمل الصفة والشرح والآية');
+        return;
+    }
+    state.customSifat.push({ ar, me, d, v, vr });
+    localStorage.setItem('rahman_custom_sifat', JSON.stringify(state.customSifat));
+    closeNameModal();
+    renderSifat($('#sifatSearch')?.value || '');
+    showToast('✅ تم حفظ الصفة');
+}
+
+function deleteSifat(idx) {
+    if (!confirm('حذف هذه الصفة؟')) return;
+    state.customSifat.splice(idx, 1);
+    localStorage.setItem('rahman_custom_sifat', JSON.stringify(state.customSifat));
+    renderSifat($('#sifatSearch')?.value || '');
+    showToast('🗑️ تم الحذف');
+}
+
+/* ============================================
+   AF'AL
+   ============================================ */
+function getAllAfal() {
+    return [...DEFAULT_AFAL, ...state.customAfal];
+}
+function renderAfal(filter = '') {
+    const grid = $('#afalGrid');
+    if (!grid) return;
+    const q = filter.trim().toLowerCase();
+    const all = getAllAfal();
+    const filtered = all.filter(s =>
+        !q || s.ar.includes(q) || s.me.includes(q) || s.d.includes(q)
+    );
+    grid.innerHTML = filtered.map((s, idx) => {
+        const isCustom = idx >= DEFAULT_AFAL.length;
+        const realIdx = isCustom ? idx - DEFAULT_AFAL.length : idx;
+        return `
+            <div class="name-card sifat-card ${isCustom ? 'custom-card' : ''}" data-idx="${idx}" data-custom="${isCustom}" data-real="${realIdx}">
+                ${isCustom ? `<button class="delete-custom" onclick="event.stopPropagation(); deleteAfal(${realIdx})">✕</button>` : ''}
+                <div class="card-tag">${isCustom ? 'مضاف' : 'فعل'}</div>
+                <div class="name-arabic">${escapeHtml(s.ar)}</div>
+                <div class="name-meaning">${escapeHtml(s.me)}</div>
+                <div class="card-verse-hint">﴿ ${escapeHtml(s.v.length > 40 ? s.v.slice(0, 40) + '…' : s.v)} ﴾</div>
+            </div>
+        `;
+    }).join('') + `
+        <div class="name-card add-new-card" onclick="openAddAfalModal()">
+            <div class="name-arabic">＋</div>
+            <div class="name-meaning">أضف فعلًا</div>
+        </div>
+    `;
+
+    grid.querySelectorAll('.sifat-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.delete-custom')) return;
+            const isCustom = card.dataset.custom === 'true';
+            const realIdx = parseInt(card.dataset.real);
+            const item = isCustom ? state.customAfal[realIdx] : DEFAULT_AFAL[realIdx];
+            if (item) showNameModal(item, 'فعل');
+        });
+    });
+}
+
+function openAddAfalModal() {
+    const modal = $('#nameModal');
+    const content = $('#nameModalContent');
+    content.innerHTML = `
+        <button class="modal-close" onclick="closeNameModal()">✕</button>
+        <h3 style="font-family:var(--font-quran); color:var(--gold); font-size:1.6rem; margin-bottom:20px;">⚡ إضافة فعل جديد</h3>
+        <div class="form-group">
+            <label>الفعل *</label>
+            <input type="text" id="newAfalName" placeholder="مثال: العطاء">
+        </div>
+        <div class="form-group">
+            <label>العنوان المختصر</label>
+            <input type="text" id="newAfalMe" placeholder="وصف موجز للفعل">
+        </div>
+        <div class="form-group">
+            <label>الشرح *</label>
+            <textarea id="newAfalDesc" placeholder="اشرح الفعل بكلماتك..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>الآية القرآنية *</label>
+            <textarea id="newAfalVerse" placeholder="﴿ ... ﴾" style="min-height:80px;"></textarea>
+        </div>
+        <div class="form-group">
+            <label>المرجع</label>
+            <input type="text" id="newAfalRef" placeholder="مثال: الزمر: 62">
+        </div>
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+            <button class="btn btn-primary" onclick="saveAfal()">💾 حفظ الفعل</button>
+            <button class="btn" onclick="closeNameModal()">إلغاء</button>
+        </div>
+    `;
+    modal.classList.add('show');
+    setTimeout(() => $('#newAfalName')?.focus(), 100);
+}
+
+function saveAfal() {
+    const ar = $('#newAfalName').value.trim();
+    const me = $('#newAfalMe').value.trim() || ar;
+    const d = $('#newAfalDesc').value.trim();
+    const v = $('#newAfalVerse').value.trim();
+    const vr = $('#newAfalRef').value.trim() || '—';
+    if (!ar || !d || !v) {
+        showToast('⚠️ أكمل الفعل والشرح والآية');
+        return;
+    }
+    state.customAfal.push({ ar, me, d, v, vr });
+    localStorage.setItem('rahman_custom_afal', JSON.stringify(state.customAfal));
+    closeNameModal();
+    renderAfal($('#afalSearch')?.value || '');
+    showToast('✅ تم حفظ الفعل');
+}
+
+function deleteAfal(idx) {
+    if (!confirm('حذف هذا الفعل؟')) return;
+    state.customAfal.splice(idx, 1);
+    localStorage.setItem('rahman_custom_afal', JSON.stringify(state.customAfal));
+    renderAfal($('#afalSearch')?.value || '');
+    showToast('🗑️ تم الحذف');
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+function showNameModal(item, type) {
+    const modal = $('#nameModal');
+    const content = $('#nameModalContent');
+    const label = type === 'اسم' ? 'الاسم' : (type === 'صفة' ? 'الصفة' : 'الفعل');
+    content.innerHTML = `
+        <button class="modal-close" onclick="closeNameModal()">✕</button>
+        <div class="modal-name-num">${label}</div>
+        <div class="modal-name-arabic">${escapeHtml(item.ar)}</div>
+        <div class="modal-divider"></div>
+        <div class="modal-meaning">${escapeHtml(item.d)}</div>
+        <div class="modal-verse">
+            ﴿ ${escapeHtml(item.v)} ﴾
+            <span class="modal-verse-ref">سورة ${escapeHtml(item.vr)}</span>
+        </div>
+        <div style="margin-top:20px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="copyItemToClipboard('${escapeHtml(item.ar).replace(/'/g,"\\'")}', '${escapeHtml(item.d).replace(/'/g,"\\'")}', '${escapeHtml(item.v).replace(/'/g,"\\'")}', '${escapeHtml(item.vr).replace(/'/g,"\\'")}')">📋 نسخ</button>
+            <button class="btn" onclick="closeNameModal()">إغلاق</button>
+        </div>
+    `;
+    modal.classList.add('show');
+}
+
+function closeNameModal() {
+    $('#nameModal').classList.remove('show');
+}
+
+function copyItemToClipboard(ar, d, v, vr) {
+    const text = `${ar}\n${d}\n﴿ ${v} ﴾\n(${vr})`;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => showToast('📋 تم النسخ'));
+    } else {
+        showToast('⚠️ النسخ غير متاح');
+    }
+}
+
+document.addEventListener('click', (e) => {
+    if (e.target.id === 'nameModal') closeNameModal();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNameModal();
+});
+
+/* ============================================
+   PRAYER ADHKAR
+   ============================================ */
+function renderPrayerAdhkar() {
+    const container = $('#prayerAdhkar');
+    if (!container) return;
+    container.innerHTML = PRAYER_ADHKAR.map(v => `
+        <div class="verse-card">
+            <div class="v-tag">${v.tag}</div>
+            <div class="v-text">${v.t}</div>
+            <div class="v-ref">— ${v.r}</div>
+        </div>
+    `).join('');
+}
+
+/* ============================================
+   STATS
+   ============================================ */
+function updateStats() {
+    const statsGrid = $('#statsGrid');
+    if (statsGrid) {
+        statsGrid.innerHTML = `
+            <div class="stat-card">
+                <span class="stat-icon">👁️</span>
+                <div class="stat-value">${state.visits.toLocaleString('ar-EG')}</div>
+                <div class="stat-label">عدد الزيارات</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">🔥</span>
+                <div class="stat-value">${state.streak}</div>
+                <div class="stat-label">يوم متتابع</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">🌟</span>
+                <div class="stat-value">${state.customSifat.length}</div>
+                <div class="stat-label">صفات أضفتها</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">⚡</span>
+                <div class="stat-value">${state.customAfal.length}</div>
+                <div class="stat-label">أفعال أضفتها</div>
+            </div>
+        `;
+    }
+    renderAchievements();
+}
+
+function renderAchievements() {
+    const achievements = [
+        { icon:'🌱', title:'البداية المباركة', desc:'زيارة واحدة', unlocked: state.visits >= 1 },
+        { icon:'🌿', title:'المثابر', desc:'١٠ زيارات', unlocked: state.visits >= 10 },
+        { icon:'🌳', title:'المواصل', desc:'١٠٠ زيارة', unlocked: state.visits >= 100 },
+        { icon:'🔥', title:'الثبات', desc:'٣ أيام متتابعة', unlocked: state.streak >= 3 },
+        { icon:'⚡', title:'المداومة', desc:'٧ أيام متتابعة', unlocked: state.streak >= 7 },
+        { icon:'💎', title:'الاستمرارية', desc:'٣٠ يومًا متتابعًا', unlocked: state.streak >= 30 },
+        { icon:'🌟', title:'الكاتب', desc:'أضفت صفة', unlocked: state.customSifat.length >= 1 },
+        { icon:'✨', title:'المنشئ', desc:'أضفت فعلًا', unlocked: state.customAfal.length >= 1 },
+        { icon:'📚', title:'الموسوعي', desc:'٥ صفات مضافة', unlocked: state.customSifat.length >= 5 },
+        { icon:'🎖️', title:'العالم', desc:'٥ أفعال مضافة', unlocked: state.customAfal.length >= 5 }
+    ];
+
+    const list = $('#achievementsList');
+    if (list) {
+        list.innerHTML = achievements.map(a => `
+            <div class="achievement ${a.unlocked ? 'unlocked' : ''}">
+                <div class="achievement-badge">${a.icon}</div>
+                <div class="achievement-info">
+                    <div class="achievement-title">${a.title}</div>
+                    <div class="achievement-desc">${a.desc}</div>
+                </div>
+            </div>
+        `).join('');
+    }
+}
+
+/* ============================================
+   VISITS / STREAK
+   ============================================ */
+function trackVisit() {
+    state.visits++;
+    localStorage.setItem('rahman_visits', state.visits);
+
+    const today = new Date().toISOString().slice(0, 10);
+    const lastVisit = state.lastVisit;
+
+    if (lastVisit !== today) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yStr = yesterday.toISOString().slice(0, 10);
+
+        if (lastVisit === yStr) {
+            state.streak++;
+        } else {
+            state.streak = 1;
+        }
+        state.lastVisit = today;
+        localStorage.setItem('rahman_streak', state.streak);
+        localStorage.setItem('rahman_last_visit', today);
+    }
+}
+
+/* ============================================
+   SEARCH
+   ============================================ */
+function initSearch() {
+    const ns = $('#namesSearch');
+    if (ns) ns.addEventListener('input', (e) => renderNames(e.target.value));
+    const ss = $('#sifatSearch');
+    if (ss) ss.addEventListener('input', (e) => renderSifat(e.target.value));
+    const as = $('#afalSearch');
+    if (as) as.addEventListener('input', (e) => renderAfal(e.target.value));
+}
+
+/* ============================================
+   SCROLL
+   ============================================ */
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ============================================
+   INIT
+   ============================================ */
+function init() {
+    trackVisit();
+
+    const savedTheme = localStorage.getItem('rahman_theme') || 'night';
+    applyTheme(savedTheme);
+    initThemePicker();
+
+    initTabs();
+    updateClock();
+    setInterval(updateClock, 1000);
+    showRandomVerse();
+
+    renderNames();
+    renderSifat();
+    renderAfal();
+    initSearch();
+
+    renderPrayerTimes();
+    renderPrayerAdhkar();
+    updateStats();
+
+    // Update celestial on resize
+    window.addEventListener('resize', () => updateCelestialStage());
+
+    console.log('%c🕌 موقع الرحمن — رحلة في جلال الله', 'color:#d4af37;font-size:16px;font-weight:bold;');
+    console.log('%c© AhmdSchool — ahmd@gmx.li', 'color:#a0a8c0;font-size:12px;');
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+</script>
+</body>
+</html>
